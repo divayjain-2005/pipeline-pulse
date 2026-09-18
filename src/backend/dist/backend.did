@@ -1,0 +1,235 @@
+type Value = 
+ variant {
+   "bool": bool;
+   float: float64;
+   "int": int;
+   "nat": nat;
+   "null";
+   "text": text;
+ };
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type StakeholderRole = 
+ variant {
+   blocker;
+   champion;
+   economicBuyer;
+   procurement;
+   technicalEvaluator;
+ };
+type Stakeholder = 
+ record {
+   engagement: EngagementLevel;
+   lastContacted: int;
+   name: text;
+   role: StakeholderRole;
+ };
+type StageStats = 
+ record {
+   avgDaysInStage: float64;
+   dealCount: nat;
+   stage: DealStage;
+   totalValue: nat;
+   weightedValue: nat;
+   winRate: float64;
+ };
+type RiskSignal = 
+ record {
+   caption: text;
+   code: text;
+   contribution: float64;
+   detail: text;
+   weight: float64;
+ };
+type RiskBucket = 
+ variant {
+   high;
+   low;
+   medium;
+ };
+type Result__1 = 
+ variant {
+   err: Error;
+   ok;
+ };
+type Result = 
+ record {
+   hasMore: bool;
+   rows: vec vec Cell;
+ };
+type PipelineResult_3 = 
+ variant {
+   err: PipelineError;
+   ok: DealRisk;
+ };
+type PipelineResult_2 = 
+ variant {
+   err: PipelineError;
+   ok: Forecast;
+ };
+type PipelineResult_1 = 
+ variant {
+   err: PipelineError;
+   ok;
+ };
+type PipelineResult = 
+ variant {
+   err: PipelineError;
+   ok: Deal;
+ };
+type PipelineError = 
+ variant {
+   invalidInput: text;
+   notAuthorized;
+   notFound: nat;
+ };
+type HistoricalBaseline = 
+ record {
+   avgDealCycleDays: float64;
+   closedDealCount: nat;
+   forecastErrorPct: float64;
+   overallWinRate: float64;
+   stageStats: vec StageStats;
+ };
+type ForecastBreakdown = 
+ record {
+   caption: text;
+   dealCount: nat;
+   key: text;
+   totalValue: nat;
+   weightedValue: nat;
+ };
+type Forecast = 
+ record {
+   byOwner: vec ForecastBreakdown;
+   byRiskBucket: vec ForecastBreakdown;
+   byStage: vec ForecastBreakdown;
+   computedAt: int;
+   confidenceLabel: text;
+   high: nat;
+   low: nat;
+   mostLikely: nat;
+   naivePipeline: nat;
+   rangeBasis: text;
+   rationale: text;
+   rationaleGeneratedAt: opt int;
+   repCommitEstimate: nat;
+ };
+type Error = 
+ variant {
+   AmbiguousAttribute: record {
+                         field: text;
+                         sources: vec text;
+                       };
+   FrontendOriginMismatch: record {
+                             expected: vec text;
+                             got: text;
+                           };
+   FrontendOriginsNotConfigured;
+   MalformedCandid;
+   MissingField: text;
+   MixedSsoSources: record {
+                      otherKeys: vec text;
+                      ssoKeys: vec text;
+                    };
+   NoAttributes;
+   Stale: record {ageNs: nat;};
+   UnknownNonce;
+   UntrustedSsoSource: record {domain: text;};
+ };
+type EngagementLevel = 
+ variant {
+   high;
+   low;
+   medium;
+   none;
+ };
+type DealStage = 
+ variant {
+   closedLost;
+   closedWon;
+   negotiation;
+   proposal;
+   prospecting;
+   qualification;
+ };
+type DealRisk = 
+ record {
+   bucket: RiskBucket;
+   dealId: nat;
+   explanation: text;
+   explanationGeneratedAt: opt int;
+   recommendedAction: text;
+   score: float64;
+   signals: vec RiskSignal;
+   topReason: text;
+ };
+type Deal = 
+ record {
+   account: text;
+   activityLast30Days: nat;
+   activityPrior30Days: nat;
+   amount: nat;
+   closeDatePushes: nat;
+   createdDate: int;
+   expectedCloseDate: int;
+   id: nat;
+   lastActivityDate: int;
+   name: text;
+   notes: text;
+   owner: text;
+   stage: DealStage;
+   stakeholders: vec Stakeholder;
+ };
+type Cell = 
+ record {
+   name: text;
+   value: Value;
+ };
+service : {
+  _initialize_access_control: () -> ();
+  _internet_identity_sign_in_finish: () -> (Result__1);
+  _internet_identity_sign_in_start: () -> (blob);
+  addStakeholder: (dealId: nat, stakeholder: Stakeholder) -> (PipelineResult);
+  assignCallerUserRole: (user: principal, role: UserRole) -> ();
+  createDeal: (deal: Deal) -> (PipelineResult);
+  deleteDeal: (id: nat) -> (PipelineResult_1);
+  execute: (qJson: text) -> (Result) query;
+  generateDealReasoning: (dealId: nat) -> (PipelineResult_3);
+  generateForecastRationale: () -> (PipelineResult_2);
+  getApiDoc: () -> (text) query;
+  getBaseline: () -> (HistoricalBaseline) query;
+  getCallerUserRole: () -> (UserRole) query;
+  getDeal: (id: nat) -> (opt Deal) query;
+  getDealReasoning: (dealId: nat) -> (opt DealRisk) query;
+  getForecast: () -> (Forecast) query;
+  getForecastRationale: () ->
+   (opt record {
+          generatedAt: int;
+          "text": text;
+        }) query;
+  isCallerAdmin: () -> (bool) query;
+  listDealRisks: () -> (vec DealRisk) query;
+  listDeals: () -> (vec Deal) query;
+  resetSampleData: () -> (PipelineResult_1);
+  schema: () -> (text) query;
+  /// Replaces all pipeline state with the deterministic synthetic dataset.
+  seedSampleData: () -> ();
+  storeAddStakeholder: (dealId: nat, stakeholder: Stakeholder) ->
+   (PipelineResult);
+  storeBaseline: () -> (HistoricalBaseline);
+  storeCreateDeal: (deal: Deal) -> (PipelineResult);
+  storeDeleteDeal: (id: nat) -> (PipelineResult_1);
+  storeGetDeal: (id: nat) -> (opt Deal);
+  storeListDeals: () -> (vec Deal);
+  storeUpdateDeal: (id: nat, deal: Deal) -> (PipelineResult);
+  storeUpdateStakeholder: (dealId: nat, stakeholderIndex: nat, stakeholder:
+   Stakeholder) -> (PipelineResult);
+  updateDeal: (id: nat, deal: Deal) -> (PipelineResult);
+  updateStakeholder: (dealId: nat, stakeholderIndex: nat, stakeholder:
+   Stakeholder) -> (PipelineResult);
+}

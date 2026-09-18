@@ -1,0 +1,21 @@
+{
+  "overview": "An AI agent that analyzes CRM-style pipeline data to produce a probabilistic revenue forecast and a ranked list of at-risk deals with specific reasons and recommended next actions.",
+  "features": [
+    "Pre-loaded synthetic CRM pipeline of about 150 deals",
+    "Weighted-pipeline forecast with a confidence range and baseline comparison",
+    "Rule-based risk scoring for stalled deals, engagement drop-off, missing stakeholders, and slipped close dates",
+    "AI-written risk explanations and specific next-best actions per deal",
+    "Leadership dashboard with charts, a ranked at-risk table, and a weekly review view",
+    "Deal detail view with contributing risk signals and editable deal data"
+  ],
+  "category": "sales-analytics",
+  "tags": [
+    "sales",
+    "forecasting",
+    "revenue",
+    "risk",
+    "dashboard",
+    "ai-agent"
+  ],
+  "last_updated": "2026-09-18T14:30:12.403Z"
+}

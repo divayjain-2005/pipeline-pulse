@@ -1,0 +1,176 @@
+// Version: 4.0.0
+type AccessControlState__201339279 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__230067015<Principal, UserRole__91647283>
+  };
+type Data__44217153<K, V> = {var count : Nat__227979830; kvs : [var ?(K, V)]};
+type DealRisk__150429737 =
+  {
+    bucket : RiskBucket__14339619;
+    dealId : Nat;
+    explanation : Text;
+    explanationGeneratedAt : ?Int;
+    recommendedAction : Text;
+    score : Float;
+    signals : [RiskSignal__41519661];
+    topReason : Text
+  };
+type DealRisk__405688228 =
+  {
+    bucket : RiskBucket__378507039;
+    dealId : Nat;
+    explanation : Text;
+    explanationGeneratedAt : ?Int;
+    recommendedAction : Text;
+    score : Float;
+    signals : [RiskSignal__913844588];
+    topReason : Text
+  };
+type DealStage__42999301 =
+  {
+    #closedLost;
+    #closedWon;
+    #negotiation;
+    #proposal;
+    #prospecting;
+    #qualification
+  };
+type DealStage__45349178 =
+  {
+    #closedLost;
+    #closedWon;
+    #negotiation;
+    #proposal;
+    #prospecting;
+    #qualification
+  };
+type Deal__755731882 =
+  {
+    account : Text;
+    activityLast30Days : Nat;
+    activityPrior30Days : Nat;
+    amount : Nat;
+    closeDatePushes : Nat;
+    createdDate : Int;
+    expectedCloseDate : Int;
+    id : Nat;
+    lastActivityDate : Int;
+    name : Text;
+    notes : Text;
+    owner : Text;
+    stage : DealStage__45349178;
+    stakeholders : [Stakeholder__275943160]
+  };
+type Deal__811414504 =
+  {
+    account : Text;
+    activityLast30Days : Nat;
+    activityPrior30Days : Nat;
+    amount : Nat;
+    closeDatePushes : Nat;
+    createdDate : Int;
+    expectedCloseDate : Int;
+    id : Nat;
+    lastActivityDate : Int;
+    name : Text;
+    notes : Text;
+    owner : Text;
+    stage : DealStage__42999301;
+    stakeholders : [Stakeholder__672895588]
+  };
+type EngagementLevel__270753914 = {#high; #low; #medium; #none};
+type EngagementLevel__805272781 = {#high; #low; #medium; #none};
+type Internal__283199666<K, V> =
+  {children : [var ?Node__204828119<K, V>]; data : Data__44217153<K, V>};
+type Leaf__598469445<K, V> = {data : Data__44217153<K, V>};
+type List__355132335<T> =
+  {
+    var blockIndex : Nat__227979830;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__227979830
+  };
+type List__836382695<T> = List__355132335<T>;
+type Map__230067015<K, V> = Map__405889023<K, V>;
+type Map__405889023<K, V> = Map__603270868<K, V>;
+type Map__603270868<K, V> =
+  {var root : Node__204828119<K, V>; var size : Nat__227979830};
+type Nat__227979830 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__136583993 =
+  {
+    accessControlState : AccessControlState__201339279;
+    baselineDeals : List__836382695<Deal__811414504>;
+    deals : Map__230067015<Nat, Deal__811414504>;
+    forecastRationale : {var generatedAt : ?Int; var text : Text};
+    reasoningCache : Map__230067015<Nat, DealRisk__405688228>;
+    state : {var nextDealId : Nat}
+  };
+type Node__204828119<K, V> =
+  {#internal : Internal__283199666<K, V>; #leaf : Leaf__598469445<K, V>};
+type OldActor__515537762 = {};
+type RiskBucket__14339619 = {#high; #low; #medium};
+type RiskBucket__378507039 = {#high; #low; #medium};
+type RiskSignal__41519661 =
+  {
+    caption : Text;
+    code : Text;
+    contribution : Float;
+    detail : Text;
+    weight : Float
+  };
+type RiskSignal__913844588 =
+  {
+    caption : Text;
+    code : Text;
+    contribution : Float;
+    detail : Text;
+    weight : Float
+  };
+type StakeholderRole__1005995534 =
+  {#blocker; #champion; #economicBuyer; #procurement; #technicalEvaluator};
+type StakeholderRole__583099662 =
+  {#blocker; #champion; #economicBuyer; #procurement; #technicalEvaluator};
+type Stakeholder__275943160 =
+  {
+    engagement : EngagementLevel__805272781;
+    lastContacted : Int;
+    name : Text;
+    role : StakeholderRole__1005995534
+  };
+type Stakeholder__672895588 =
+  {
+    engagement : EngagementLevel__270753914;
+    lastContacted : Int;
+    name : Text;
+    role : StakeholderRole__583099662
+  };
+type UserRole__91647283 = {#admin; #guest; #user};
+{
+  "20260918_150000" : (_old : OldActor__515537762) -> NewActor__136583993
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__230067015<Principal, UserRole__91647283>
+    };
+  stable baselineDeals :
+    {
+      var blockIndex : Nat__227979830;
+      var blocks : [var [var ?Deal__755731882]];
+      var elementIndex : Nat__227979830
+    };
+  stable deals :
+    {
+      var root : Node__204828119<Nat, Deal__755731882>;
+      var size : Nat__227979830
+    };
+  stable forecastRationale : {var generatedAt : ?Int; var text : Text};
+  stable reasoningCache :
+    {
+      var root : Node__204828119<Nat, DealRisk__150429737>;
+      var size : Nat__227979830
+    };
+  stable state : {var nextDealId : Nat}
+};

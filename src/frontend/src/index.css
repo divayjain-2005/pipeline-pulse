@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Fonts — bundled, self-hosted, no CDN
+   Space Grotesk : display + numerals (tabular, technical)
+   Figtree       : body + UI labels (humanist, legible small)
+   Geist Mono    : tabular numeric columns, deal IDs, deltas
+--------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  /* =========================================================================
+     LIGHT — "Warm Ledger"
+     Warm off-white paper, near-black ink, deep ink-teal primary.
+     Risk ramp: rose (high) / amber (medium) / moss (low).
+     ========================================================================= */
+  :root {
+    --font-display: "Space Grotesk";
+    --font-body: "Figtree";
+    --font-mono: "Geist Mono";
+    --radius: 0.5rem;
+
+    /* Surfaces — warm neutral, hue 85 keeps the paper cast subtle */
+    --background: 0.975 0.004 85;
+    --foreground: 0.19 0.012 80;
+    --card: 0.995 0.002 85;
+    --card-foreground: 0.19 0.012 80;
+    --popover: 0.995 0.002 85;
+    --popover-foreground: 0.19 0.012 80;
+
+    /* Primary — deep ink teal. Authoritative, not corporate navy. */
+    --primary: 0.36 0.062 205;
+    --primary-foreground: 0.985 0.004 205;
+
+    --secondary: 0.945 0.006 85;
+    --secondary-foreground: 0.28 0.014 80;
+    --muted: 0.945 0.006 85;
+    --muted-foreground: 0.505 0.014 82;
+
+    /* Accent — brighter teal for active states & focus */
+    --accent: 0.52 0.088 205;
+    --accent-foreground: 0.985 0.004 205;
+
+    /* Signal ramp — carries RISK, never decoration */
+    --destructive: 0.512 0.168 22;
+    --destructive-foreground: 0.985 0.004 22;
+    --success: 0.498 0.104 152;
+    --success-foreground: 0.985 0.004 152;
+    --warning: 0.635 0.132 68;
+    --warning-foreground: 0.19 0.012 68;
+    --info: 0.52 0.088 205;
+    --info-foreground: 0.985 0.004 205;
+
+    --border: 0.898 0.008 85;
+    --input: 0.898 0.008 85;
+    --ring: 0.52 0.088 205;
+
+    /* Charts — ordered by importance, all distinguishable in grayscale */
+    --chart-1: 0.42 0.078 205; /* ink teal — weighted pipeline / primary series */
+    --chart-2: 0.62 0.108 152; /* moss — committed / healthy */
+    --chart-3: 0.7 0.128 68; /* amber — medium risk */
+    --chart-4: 0.56 0.158 22; /* rose — high risk */
+    --chart-5: 0.58 0.048 285; /* slate violet — baseline / comparison */
+
+    /* Sidebar — recessed paper, one step darker than content */
+    --sidebar: 0.952 0.006 85;
+    --sidebar-foreground: 0.19 0.012 80;
+    --sidebar-primary: 0.36 0.062 205;
+    --sidebar-primary-foreground: 0.985 0.004 205;
+    --sidebar-accent: 0.915 0.008 85;
+    --sidebar-accent-foreground: 0.28 0.014 80;
+    --sidebar-border: 0.898 0.008 85;
+    --sidebar-ring: 0.52 0.088 205;
+
+    /* Non-color tokens */
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.4 0.07 205),
+      oklch(0.32 0.058 215)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.995 0.002 85),
+      oklch(0.972 0.006 85)
+    );
+    --transition-smooth: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    --rail-track: oklch(0.915 0.008 85);
+    --grid-line: oklch(0.936 0.006 85);
+  }
+
+  /* =========================================================================
+     DARK — "Boardroom at Night"
+     Warm charcoal, not inverted grey. Teal lifts, risk ramp brightens.
+     ========================================================================= */
+  .dark {
+    --background: 0.168 0.01 80;
+    --foreground: 0.935 0.008 85;
+    --card: 0.212 0.012 80;
+    --card-foreground: 0.935 0.008 85;
+    --popover: 0.238 0.013 80;
+    --popover-foreground: 0.935 0.008 85;
+
+    --primary: 0.715 0.098 200;
+    --primary-foreground: 0.168 0.01 80;
+
+    --secondary: 0.252 0.013 80;
+    --secondary-foreground: 0.878 0.008 85;
+    --muted: 0.252 0.013 80;
+    --muted-foreground: 0.628 0.012 82;
+
+    --accent: 0.715 0.098 200;
+    --accent-foreground: 0.168 0.01 80;
+
+    --destructive: 0.648 0.158 24;
+    --destructive-foreground: 0.168 0.01 24;
+    --success: 0.672 0.118 152;
+    --success-foreground: 0.168 0.01 152;
+    --warning: 0.762 0.128 72;
+    --warning-foreground: 0.168 0.01 72;
+    --info: 0.715 0.098 200;
+    --info-foreground: 0.168 0.01 200;
+
+    --border: 0.298 0.013 80;
+    --input: 0.298 0.013 80;
+    --ring: 0.715 0.098 200;
+
+    --chart-1: 0.715 0.098 200;
+    --chart-2: 0.672 0.118 152;
+    --chart-3: 0.762 0.128 72;
+    --chart-4: 0.648 0.158 24;
+    --chart-5: 0.648 0.058 285;
+
+    --sidebar: 0.196 0.011 80;
+    --sidebar-foreground: 0.935 0.008 85;
+    --sidebar-primary: 0.715 0.098 200;
+    --sidebar-primary-foreground: 0.168 0.01 80;
+    --sidebar-accent: 0.252 0.013 80;
+    --sidebar-accent-foreground: 0.878 0.008 85;
+    --sidebar-border: 0.298 0.013 80;
+    --sidebar-ring: 0.715 0.098 200;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.735 0.1 200),
+      oklch(0.635 0.092 212)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.222 0.012 80),
+      oklch(0.196 0.011 80)
+    );
+    --rail-track: oklch(0.278 0.013 80);
+    --grid-line: oklch(0.262 0.012 80);
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+  /* Numerals always align in columns */
+  .font-mono,
+  [data-numeric] {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* --- Signature: confidence-range rail ------------------------------------
+     A thin band rendering P10–P90 with a marker at the P50 point estimate.
+     Uncertainty becomes a physical object rather than a footnote. */
+  .rail-track {
+    background-color: var(--rail-track);
+  }
+  .rail-band {
+    background: linear-gradient(
+      90deg,
+      oklch(var(--chart-1) / 0.28),
+      oklch(var(--chart-1) / 0.42),
+      oklch(var(--chart-1) / 0.28)
+    );
+  }
+  .rail-marker {
+    background-color: oklch(var(--chart-1));
+  }
+  .rail-marker-baseline {
+    background-color: oklch(var(--chart-5));
+  }
+
+  /* --- Risk signal chips — restrained, small, never decorative ----------- */
+  .signal-high {
+    color: oklch(var(--destructive));
+    background-color: oklch(var(--destructive) / 0.1);
+    border-color: oklch(var(--destructive) / 0.28);
+  }
+  .signal-medium {
+    color: oklch(var(--warning));
+    background-color: oklch(var(--warning) / 0.12);
+    border-color: oklch(var(--warning) / 0.3);
+  }
+  .signal-low {
+    color: oklch(var(--success));
+    background-color: oklch(var(--success) / 0.1);
+    border-color: oklch(var(--success) / 0.26);
+  }
+
+  /* --- Ledger rules: hairline separators for dense tables ---------------- */
+  .rule-grid {
+    border-color: var(--grid-line);
+  }
+
+  /* --- Section label: small, uppercase, tracked -------------------------- */
+  .label-section {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: oklch(var(--muted-foreground));
+  }
+
+  .surface-subtle {
+    background-image: var(--gradient-subtle);
+  }
+
+  .text-gradient-primary {
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Scrollbars that recede in dense data views */
+  .scroll-slim {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(var(--border)) transparent;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reduced motion — honor the user's OS preference.
+   Entrance animations collapse to their final state; spinners keep a slow
+   rotation so pending states remain legible without vestibular triggers.
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .animate-rail-in,
+  .animate-marker-in,
+  .animate-row-in,
+  .animate-fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .animate-spin {
+    animation-duration: 1.6s !important;
+  }
+
+  .transition-smooth {
+    transition-duration: 0.01ms !important;
+  }
+}
