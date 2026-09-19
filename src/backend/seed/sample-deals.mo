@@ -12,6 +12,7 @@ module {
   public type Seed = {
     deals : [Types.Deal];
     baseline : [Types.Deal];
+    closedHistory : [Types.Deal];
   };
 
   // ---------------------------------------------------------------------------
@@ -174,6 +175,18 @@ module {
     items[index % items.size()];
   };
 
+  /// A plausible rep estimate for a deal: the deal amount nudged by a
+  /// deterministic -15%..+10% adjustment, rounded to the nearest 500. Roughly
+  /// one deal in eight is left unestimated (`null`) so the UI has to handle
+  /// unestimated deals.
+  func repEstimateFor(amount : Nat, roll : Nat) : ?Nat {
+    if (roll % 8 == 0) { return null };
+    let pct = (roll % 26).toInt() - 15; // -15 .. +10
+    let adjusted = amount.toInt() * (100 + pct) / 100;
+    let rounded = ((adjusted + 250) / 500) * 500;
+    if (rounded <= 0) { ?0 } else { ?rounded.toNat() };
+  };
+
   func stageFromIndex(index : Nat) : Types.DealStage {
     switch (index % 10) {
       case (0 or 1) { #prospecting };
@@ -277,6 +290,7 @@ module {
         closeDatePushes = pushes;
         notes;
         stakeholders;
+        repEstimate = repEstimateFor(amount, s7);
       });
 
       s := sEnd;
@@ -349,6 +363,7 @@ module {
         closeDatePushes = s3 % 3;
         notes = "Historical closed deal used for baseline win-rate and cycle-time derivation.";
         stakeholders = [];
+        repEstimate = repEstimateFor(amount, s4);
       });
 
       s := s7;
@@ -357,11 +372,158 @@ module {
     out.toArray();
   };
 
-  /// Full seed: open pipeline plus historical baseline.
+  // ---------------------------------------------------------------------------
+  // Multi-quarter closed history (backtest actuals)
+  // ---------------------------------------------------------------------------
+
+  /// Number of past quarters of closed history. Fixed at 6 so the backtest has
+  /// several held-out quarters to average over.
+  let historyQuarters : Nat = 6;
+
+  /// Builds ~6 quarters of closed deals (won and lost) with close dates spread
+  /// across those quarters. This is the backtest's source of actual outcomes and
+  /// is kept separate from both the open pipeline and the win-rate baseline.
+  /// Ids start at 20_000 so they never collide with open deals or the baseline.
+  public func closedHistoryDeals(nowMs : Int) : [Types.Deal] {
+    var s : Nat = 135_792_468;
+    var i = 0;
+    let out = List.empty<Types.Deal>();
+    let perQuarter : Nat = 20;
+    let total = historyQuarters * perQuarter;
+    while (i < total) {
+      let s1 = next(s);
+      let s2 = next(s1);
+      let s3 = next(s2);
+      let s4 = next(s3);
+      let s5 = next(s4);
+      let s6 = next(s5);
+      let s7 = next(s6);
+
+      let quarterIndex = i / perQuarter; // 0 = most recent quarter
+      let dayOffset = quarterIndex * 91 + (s1 % 88);
+      let won = (s2 % 100) < 62;
+      let outcome : Types.DealStage = if (won) { #closedWon } else { #closedLost };
+      let account = pick(accountPrefixes, s3) # " " # pick(accountSuffixes, s4);
+      let name = account # " — " # pick(productNames, s5) # " (history)";
+      let owner = pick(owners, s6);
+      let amount = 15_000 + (s7 % 120) * 2_500;
+      let cycleDays = 20 + (s1 % 70);
+
+      out.add({
+        id = 20_000 + i;
+        name;
+        account;
+        owner;
+        stage = outcome;
+        amount;
+        expectedCloseDate = daysAgo(nowMs, dayOffset);
+        createdDate = daysAgo(nowMs, dayOffset + cycleDays);
+        lastActivityDate = daysAgo(nowMs, dayOffset);
+        activityLast30Days = 0;
+        activityPrior30Days = 0;
+        closeDatePushes = s3 % 3;
+        notes = "Historical closed deal used as a backtest actual outcome.";
+        stakeholders = [];
+        repEstimate = repEstimateFor(amount, s4);
+      });
+
+      s := s7;
+      i += 1;
+    };
+    out.toArray();
+  };
+
+  // ---------------------------------------------------------------------------
+  // Historical open-pipeline snapshots (backtest forecast input)
+  // ---------------------------------------------------------------------------
+
+  /// Number of open-stage deals generated per held-out quarter.
+  let historicalOpenPerQuarter : Nat = 48;
+
+  /// Maps an index onto one of the four open stages only. Terminal stages are
+  /// deliberately excluded: `computeForecast` filters `isOpen` internally, so a
+  /// snapshot containing closed deals would contribute nothing to the forecast.
+  func openStageFromIndex(index : Nat) : Types.DealStage {
+    switch (index % 4) {
+      case 0 { #prospecting };
+      case 1 { #qualification };
+      case 2 { #proposal };
+      case _ { #negotiation };
+    };
+  };
+
+  /// Deterministically generates the open pipeline as it stood at the start of
+  /// the held-out quarter at `quarterIndex` (0 = most recent held-out quarter).
+  ///
+  /// Every deal is open-stage, was created strictly before `quarterStartMs`
+  /// (30-180 days earlier), and has an expected close date at or after
+  /// `quarterStartMs` (0-120 days later), so it is genuinely part of the
+  /// pipeline the forecast would have seen at that moment. Ids live in the
+  /// 30_000+ range and are unique per quarter, so they never collide with the
+  /// open pipeline (1..150), the baseline (10_000+), or the closed history
+  /// (20_000+). `nowMs` only anchors activity dates; nothing reads the clock.
+  public func historicalOpenDeals(quarterStartMs : Int, quarterIndex : Nat, nowMs : Int) : [Types.Deal] {
+    var s : Nat = 314_159_265 + quarterIndex * 7_919;
+    var i = 0;
+    let out = List.empty<Types.Deal>();
+    while (i < historicalOpenPerQuarter) {
+      let s1 = next(s);
+      let s2 = next(s1);
+      let s3 = next(s2);
+      let s4 = next(s3);
+      let s5 = next(s4);
+      let s6 = next(s5);
+      let s7 = next(s6);
+      let s8 = next(s7);
+      let s9 = next(s8);
+      let s10 = next(s9);
+
+      let account = pick(accountPrefixes, s1) # " " # pick(accountSuffixes, s2);
+      let name = account # " — " # pick(productNames, s3) # " (snapshot)";
+      let owner = pick(owners, s4);
+      let stage = openStageFromIndex(s5);
+      let amount = 15_000 + (s6 % 120) * 2_500;
+      let createdDays = 30 + (s7 % 151); // 30..180 days before quarter start
+      let closeDays = s8 % 121; // 0..120 days after quarter start
+      let lastActivityDays = s9 % 40;
+      let activityLast30 = s10 % 13;
+      let activityPrior30 = activityLast30 + (s1 % 9);
+      let pushes = s2 % 4;
+      let notes = pick(noteFragments, s3) # " " # pick(noteFragments, s4);
+      let stakeholderCount = 1 + (s5 % 4);
+      let (stakeholders, sEnd) = makeStakeholders(s6, stakeholderCount, nowMs);
+
+      out.add({
+        id = 30_000 + quarterIndex * 200 + i;
+        name;
+        account;
+        owner;
+        stage;
+        amount;
+        expectedCloseDate = quarterStartMs + closeDays.toInt() * dayMs;
+        createdDate = quarterStartMs - createdDays.toInt() * dayMs;
+        lastActivityDate = daysAgo(nowMs, lastActivityDays);
+        activityLast30Days = activityLast30;
+        activityPrior30Days = activityPrior30;
+        closeDatePushes = pushes;
+        notes;
+        stakeholders;
+        repEstimate = repEstimateFor(amount, s7);
+      });
+
+      s := sEnd;
+      i += 1;
+    };
+    out.toArray();
+  };
+
+  /// Full seed: open pipeline, historical baseline, and multi-quarter closed
+  /// history.
   public func seed(nowMs : Int) : Seed {
     {
       deals = openDeals(nowMs);
       baseline = baselineDeals(nowMs);
+      closedHistory = closedHistoryDeals(nowMs);
     };
   };
 };

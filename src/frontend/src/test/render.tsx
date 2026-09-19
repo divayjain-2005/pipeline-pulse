@@ -127,6 +127,7 @@ export function createMockActor(
     generateForecastRationale: notImplemented("generateForecastRationale"),
     getApiDoc: notImplemented("getApiDoc"),
     getBaseline: notImplemented("getBaseline"),
+    getBacktest: notImplemented("getBacktest"),
     getCallerUserRole: notImplemented("getCallerUserRole"),
     getDeal: notImplemented("getDeal"),
     getDealReasoning: notImplemented("getDealReasoning"),

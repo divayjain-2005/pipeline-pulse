@@ -15,6 +15,8 @@ import {
 } from "@/backend";
 
 export type {
+  BacktestQuarterRow,
+  BacktestResult,
   Deal,
   DealRisk,
   Forecast,

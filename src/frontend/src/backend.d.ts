@@ -7,6 +7,29 @@ export interface None {
     __kind__: "None";
 }
 export type Option<T> = Some<T> | None;
+export interface BacktestQuarterRow {
+    modelForecast: bigint;
+    modelErrorPct: number;
+    repErrorPct: number;
+    quarterEnd: bigint;
+    wonDealCount: bigint;
+    repEstimateTotal: bigint;
+    quarterLabel: string;
+    repErrorDelta: bigint;
+    modelErrorDelta: bigint;
+    quarterStart: bigint;
+    dealCount: bigint;
+    actualWon: bigint;
+    estimatedDealCount: bigint;
+}
+export interface BacktestResult {
+    computedAt: bigint;
+    rows: Array<BacktestQuarterRow>;
+    verdict: string;
+    avgRepErrorPct: number;
+    holdoutQuarterCount: bigint;
+    avgModelErrorPct: number;
+}
 export interface Cell {
     value: Value;
     name: string;
@@ -24,6 +47,7 @@ export interface Deal {
     stage: DealStage;
     notes: string;
     account: string;
+    repEstimate?: bigint;
     activityLast30Days: bigint;
     amount: bigint;
 }
@@ -239,6 +263,7 @@ export interface backendInterface {
     generateDealReasoning(dealId: bigint): Promise<PipelineResult_3>;
     generateForecastRationale(): Promise<PipelineResult_2>;
     getApiDoc(): Promise<string>;
+    getBacktest(): Promise<BacktestResult>;
     getBaseline(): Promise<HistoricalBaseline>;
     getCallerUserRole(): Promise<UserRole>;
     getDeal(id: bigint): Promise<Deal | null>;

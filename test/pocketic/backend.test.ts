@@ -132,6 +132,9 @@ it("rejects an anonymous caller on a mutation endpoint", async () => {
     activityLast30Days: 0n,
     activityPrior30Days: 0n,
     stakeholders: [],
+    // `repEstimate` is a required Candid record key (`?Nat`); omitting it makes
+    // the encoder throw before the call reaches the canister.
+    repEstimate: [],
   });
   expect(result).toEqual({ err: { notAuthorized: null } });
 });
@@ -154,6 +157,7 @@ it("round-trips a deal through create, read, update, and delete", async () => {
     activityLast30Days: 0n,
     activityPrior30Days: 0n,
     stakeholders: [],
+    repEstimate: [275_000n],
   };
 
   const created = await actor.createDeal(draft);
@@ -224,4 +228,72 @@ it("returns a historical baseline with stage win rates", async () => {
   expect(baseline.overallWinRate).toBeGreaterThanOrEqual(0);
   expect(baseline.overallWinRate).toBeLessThanOrEqual(1);
   expect(baseline.stageStats.length).toBeGreaterThan(0);
+});
+
+it("scores held-out quarters against actual closed-won revenue", async () => {
+  const backtest = await actor.getBacktest();
+  // At least four past quarters of closed history must be scored.
+  expect(backtest.rows.length).toBeGreaterThanOrEqual(4);
+  expect(backtest.holdoutQuarterCount).toBe(BigInt(backtest.rows.length));
+  expect(backtest.verdict.length).toBeGreaterThan(0);
+  // Averages are means of absolute errors, so they are non-negative.
+  expect(backtest.avgModelErrorPct).toBeGreaterThanOrEqual(0);
+  expect(backtest.avgRepErrorPct).toBeGreaterThanOrEqual(0);
+
+  for (const row of backtest.rows) {
+    expect(row.quarterLabel.length).toBeGreaterThan(0);
+    expect(row.quarterEnd).toBeGreaterThan(row.quarterStart);
+    expect(row.actualWon).toBeGreaterThan(0n);
+    expect(row.wonDealCount).toBeGreaterThan(0n);
+    expect(row.dealCount).toBeGreaterThan(0n);
+    // The signed error is consistent with the forecast and the actual.
+    expect(row.modelErrorDelta).toBe(row.modelForecast - row.actualWon);
+    expect(row.repErrorDelta).toBe(row.repEstimateTotal - row.actualWon);
+    // Unestimated quarters report zero estimates and no estimated deals.
+    if (row.estimatedDealCount === 0n) {
+      expect(row.repEstimateTotal).toBe(0n);
+    }
+  }
+});
+
+it("round-trips a rep estimate through create and update", async () => {
+  actor.setPrincipal(SIGNED_IN);
+  const now = BigInt(Date.now());
+  const draft = {
+    id: 0n,
+    name: "Lane rep-estimate deal",
+    account: "Lane Test Co",
+    owner: "Lane Tester",
+    stage: { qualification: null },
+    amount: 200_000n,
+    expectedCloseDate: now + 30n * 86_400_000n,
+    lastActivityDate: now,
+    notes: "created by the backend lane",
+    createdDate: now,
+    closeDatePushes: 0n,
+    activityLast30Days: 0n,
+    activityPrior30Days: 0n,
+    stakeholders: [],
+    repEstimate: [180_000n],
+  };
+
+  const created = await actor.createDeal(draft);
+  expect(created).toHaveProperty("ok");
+  const createdId = (created as { ok: { id: bigint } }).ok.id;
+
+  const fetched = await actor.getDeal(createdId);
+  expect(fetched).toHaveLength(1);
+  expect(fetched[0].repEstimate).toEqual([180_000n]);
+
+  // Clearing the estimate stores an absent option, not zero.
+  const cleared = await actor.updateDeal(createdId, {
+    ...draft,
+    id: createdId,
+    repEstimate: [],
+  });
+  expect(cleared).toHaveProperty("ok");
+  const afterClear = await actor.getDeal(createdId);
+  expect(afterClear[0].repEstimate).toEqual([]);
+
+  await actor.deleteDeal(createdId);
 });

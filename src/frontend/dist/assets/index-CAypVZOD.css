@@ -1605,6 +1605,9 @@ video {
 .min-w-\[12rem\] {
   min-width: 12rem;
 }
+.min-w-\[52rem\] {
+  min-width: 52rem;
+}
 .min-w-\[68rem\] {
   min-width: 68rem;
 }
@@ -2403,6 +2406,9 @@ video {
 }
 .uppercase {
   text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
 }
 .tabular-nums {
   --tw-numeric-spacing: tabular-nums;

@@ -59,6 +59,10 @@ module {
     closeDatePushes : Nat;
     notes : Text;
     stakeholders : [Stakeholder];
+    /// Optional per-deal rep estimate in whole currency units. `null` means the
+    /// rep has not estimated this deal; unestimated deals are excluded from
+    /// rep-estimate totals and are marked as unestimated in the UI.
+    repEstimate : ?Nat;
   };
 
   // ---------------------------------------------------------------------------

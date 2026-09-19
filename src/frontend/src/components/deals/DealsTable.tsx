@@ -28,6 +28,7 @@ import { ArrowDown, ArrowUp, ChevronsUpDown } from "lucide-react";
 export type SortKey =
   | "risk"
   | "amount"
+  | "repEstimate"
   | "closeDate"
   | "name"
   | "account"
@@ -61,6 +62,7 @@ const COLUMNS: Column[] = [
   { key: "account", label: "Account" },
   { key: "owner", label: "Owner" },
   { key: "amount", label: "Amount", align: "right" },
+  { key: "repEstimate", label: "Rep estimate", align: "right" },
   { key: "stage", label: "Stage" },
   { key: "closeDate", label: "Expected close" },
   { key: "risk", label: "Risk score", align: "right" },
@@ -185,6 +187,23 @@ export function DealsTable({
                     data-numeric
                   >
                     {formatCurrency(deal.amount)}
+                  </TableCell>
+                  <TableCell
+                    className="px-4 py-4 text-right align-top"
+                    data-ocid={`deals.rep_estimate.${index + 1}`}
+                  >
+                    {deal.repEstimate === undefined ? (
+                      <span className="text-xs italic text-muted-foreground">
+                        Unestimated
+                      </span>
+                    ) : (
+                      <span
+                        className="font-mono tabular-nums text-foreground"
+                        data-numeric
+                      >
+                        {formatCurrency(deal.repEstimate)}
+                      </span>
+                    )}
                   </TableCell>
                   <TableCell className="px-4 py-4 align-top text-muted-foreground">
                     {stageLabel(deal.stage)}

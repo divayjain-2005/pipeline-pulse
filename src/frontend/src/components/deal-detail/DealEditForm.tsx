@@ -60,6 +60,9 @@ export function DealEditForm({
 }: DealEditFormProps) {
   const [stage, setStage] = useState<DealStage>(deal.stage);
   const [amount, setAmount] = useState(deal.amount.toString());
+  const [repEstimate, setRepEstimate] = useState(
+    deal.repEstimate === undefined ? "" : deal.repEstimate.toString(),
+  );
   const [expectedCloseDate, setExpectedCloseDate] = useState(
     toDateInput(deal.expectedCloseDate),
   );
@@ -72,13 +75,23 @@ export function DealEditForm({
   const amountValid =
     amount.trim().length > 0 && Number.isFinite(amountValue) && amountValue > 0;
 
+  const repEstimateTrimmed = repEstimate.trim();
+  const repEstimateValue = Number(repEstimateTrimmed);
+  const repEstimateValid =
+    repEstimateTrimmed.length === 0 ||
+    (Number.isFinite(repEstimateValue) && repEstimateValue > 0);
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!amountValid || isSaving) return;
+    if (!amountValid || !repEstimateValid || isSaving) return;
     onSave({
       ...deal,
       stage,
       amount: BigInt(Math.round(amountValue)),
+      repEstimate:
+        repEstimateTrimmed.length === 0
+          ? undefined
+          : BigInt(Math.round(repEstimateValue)),
       expectedCloseDate: fromDateInput(
         expectedCloseDate,
         deal.expectedCloseDate,
@@ -133,8 +146,8 @@ export function DealEditForm({
             <Input
               id="deal-amount"
               type="number"
-              min={1}
-              step={1000}
+              min={0}
+              step="any"
               value={amount}
               onChange={(event) => setAmount(event.target.value)}
               aria-invalid={!amountValid}
@@ -152,7 +165,36 @@ export function DealEditForm({
           </div>
 
           <div className="space-y-1.5">
-            <Label htmlFor="deal-expected-close">Expected close date</Label>
+            <Label htmlFor="deal-rep-estimate">Rep estimate (USD)</Label>
+            <Input
+              id="deal-rep-estimate"
+              type="number"
+              min={0}
+              step="any"
+              value={repEstimate}
+              onChange={(event) => setRepEstimate(event.target.value)}
+              placeholder="Optional"
+              aria-invalid={!repEstimateValid}
+              className="rounded-md font-mono"
+              data-ocid="deal_detail.edit_form.rep_estimate_input"
+            />
+            {repEstimateValid ? (
+              <p className="text-xs text-muted-foreground">
+                The rep's own forecast for this deal. Leave blank if
+                unestimated.
+              </p>
+            ) : (
+              <p
+                className="text-xs text-destructive"
+                data-ocid="deal_detail.edit_form.rep_estimate_error"
+              >
+                Enter an amount greater than zero, or leave blank.
+              </p>
+            )}
+          </div>
+
+          <div className="space-y-1.5">
+            <Label htmlFor="deal-expected-close">Expected close date</Label>{" "}
             <Input
               id="deal-expected-close"
               type="date"
@@ -208,7 +250,7 @@ export function DealEditForm({
           <Button
             type="submit"
             size="sm"
-            disabled={!amountValid || isSaving}
+            disabled={!amountValid || !repEstimateValid || isSaving}
             className="rounded-md"
             data-ocid="deal_detail.edit_form.save_button"
           >

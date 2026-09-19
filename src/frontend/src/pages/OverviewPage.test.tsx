@@ -6,7 +6,13 @@
  * low-high range, and shows the naive baseline comparison alongside it.
  */
 
-import { makeForecast, makeRisk, makeSeededPipeline } from "@/test/fixtures";
+import {
+  makeBacktestResult,
+  makeBacktestRow,
+  makeForecast,
+  makeRisk,
+  makeSeededPipeline,
+} from "@/test/fixtures";
 import { createMockActor, renderApp } from "@/test/render";
 import { screen, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
@@ -134,6 +140,150 @@ describe("OverviewPage", () => {
 
     expect(
       await screen.findByTestId("overview.error_state"),
+    ).toBeInTheDocument();
+  });
+
+  it("shows the backtest panel with per-quarter model and rep errors", async () => {
+    const { deals, risks } = makeSeededPipeline();
+    holder.actor = createMockActor({
+      listDeals: async () => deals,
+      listDealRisks: async () => risks,
+      getForecast: async () => makeForecast(),
+      getBacktest: async () =>
+        makeBacktestResult({
+          rows: [
+            makeBacktestRow({
+              quarterLabel: "2026 Q2",
+              modelErrorPct: 0.2,
+              modelErrorDelta: 200_000n,
+              repErrorPct: 0.05,
+              repErrorDelta: 50_000n,
+            }),
+            makeBacktestRow({
+              quarterLabel: "2026 Q1",
+              modelErrorPct: -0.1,
+              modelErrorDelta: -100_000n,
+              repErrorPct: 0.15,
+              repErrorDelta: 150_000n,
+            }),
+          ],
+        }),
+    });
+
+    renderApp({ initialPath: "/" });
+
+    await screen.findByTestId("overview.backtest.panel");
+    // Each held-out quarter is scored against actual closed-won revenue.
+    expect(screen.getByTestId("overview.backtest.row.1")).toHaveTextContent(
+      "2026 Q2",
+    );
+    expect(screen.getByTestId("overview.backtest.row.2")).toHaveTextContent(
+      "2026 Q1",
+    );
+    // Signed percentages distinguish over- from under-forecasting.
+    expect(
+      screen.getByTestId("overview.backtest.model_error.1"),
+    ).toHaveTextContent("+20.0%");
+    expect(
+      screen.getByTestId("overview.backtest.model_error.2"),
+    ).toHaveTextContent("−10.0%");
+    expect(
+      screen.getByTestId("overview.backtest.rep_error.1"),
+    ).toHaveTextContent("+5.0%");
+    // The dollar delta accompanies the percentage.
+    expect(
+      screen.getByTestId("overview.backtest.model_error.1"),
+    ).toHaveTextContent("+$200,000");
+  });
+
+  it("shows the average error for both the model and the reps", async () => {
+    const { deals, risks } = makeSeededPipeline();
+    holder.actor = createMockActor({
+      listDeals: async () => deals,
+      listDealRisks: async () => risks,
+      getForecast: async () => makeForecast(),
+      getBacktest: async () =>
+        makeBacktestResult({
+          avgModelErrorPct: 0.15,
+          avgRepErrorPct: 0.1,
+        }),
+    });
+
+    renderApp({ initialPath: "/" });
+
+    await screen.findByTestId("overview.backtest.avg_model");
+    expect(screen.getByTestId("overview.backtest.avg_model")).toHaveTextContent(
+      "15.0%",
+    );
+    expect(screen.getByTestId("overview.backtest.avg_rep")).toHaveTextContent(
+      "10.0%",
+    );
+  });
+
+  it("states the plain-language verdict naming the closer estimate", async () => {
+    const { deals, risks } = makeSeededPipeline();
+    holder.actor = createMockActor({
+      listDeals: async () => deals,
+      listDealRisks: async () => risks,
+      getForecast: async () => makeForecast(),
+      getBacktest: async () =>
+        makeBacktestResult({
+          verdict:
+            "Across 2 held-out quarters the reps' average error was 10% versus the model's 15%, so the reps were closer by 5% of actual closed-won revenue.",
+        }),
+    });
+
+    renderApp({ initialPath: "/" });
+
+    await screen.findByTestId("overview.backtest.verdict");
+    expect(screen.getByTestId("overview.backtest.verdict")).toHaveTextContent(
+      "the reps were closer by 5%",
+    );
+  });
+
+  it("marks a quarter with no rep estimates as unestimated", async () => {
+    const { deals, risks } = makeSeededPipeline();
+    holder.actor = createMockActor({
+      listDeals: async () => deals,
+      listDealRisks: async () => risks,
+      getForecast: async () => makeForecast(),
+      getBacktest: async () =>
+        makeBacktestResult({
+          rows: [
+            makeBacktestRow({
+              quarterLabel: "2026 Q2",
+              estimatedDealCount: 0n,
+              repEstimateTotal: 0n,
+            }),
+          ],
+        }),
+    });
+
+    renderApp({ initialPath: "/" });
+
+    await screen.findByTestId("overview.backtest.panel");
+    expect(
+      screen.getByTestId("overview.backtest.unestimated.1"),
+    ).toHaveTextContent("No rep estimates");
+  });
+
+  it("shows a backtest error state without blanking the dashboard", async () => {
+    const { deals, risks } = makeSeededPipeline();
+    holder.actor = createMockActor({
+      listDeals: async () => deals,
+      listDealRisks: async () => risks,
+      getForecast: async () => makeForecast(),
+      getBacktest: async () => {
+        throw new Error("backtest unavailable");
+      },
+    });
+
+    renderApp({ initialPath: "/" });
+
+    // The live forecast still renders; only the historical panel errors.
+    expect(await screen.findByTestId("overview.hero.card")).toBeInTheDocument();
+    expect(
+      await screen.findByTestId("overview.backtest.error_state"),
     ).toBeInTheDocument();
   });
 

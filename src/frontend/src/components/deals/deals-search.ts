@@ -27,6 +27,7 @@ export interface DealsSearch {
 const SORT_KEYS: SortKey[] = [
   "risk",
   "amount",
+  "repEstimate",
   "closeDate",
   "name",
   "account",
@@ -66,6 +67,9 @@ function compareRows(a: DealRow, b: DealRow, key: SortKey): number {
       return (a.risk?.score ?? -1) - (b.risk?.score ?? -1);
     case "amount":
       return Number(a.deal.amount - b.deal.amount);
+    case "repEstimate":
+      // Unestimated deals sort below estimated ones in ascending order.
+      return Number((a.deal.repEstimate ?? -1n) - (b.deal.repEstimate ?? -1n));
     case "closeDate":
       return Number(a.deal.expectedCloseDate - b.deal.expectedCloseDate);
     case "name":

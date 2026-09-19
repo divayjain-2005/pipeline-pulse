@@ -8,6 +8,7 @@
 
 import { createActor } from "@/backend";
 import type {
+  BacktestResult,
   Deal,
   DealRisk,
   Forecast,
@@ -28,6 +29,7 @@ export const pipelineKeys = {
   risks: () => [...pipelineKeys.all, "risks"] as const,
   forecast: () => [...pipelineKeys.all, "forecast"] as const,
   baseline: () => [...pipelineKeys.all, "baseline"] as const,
+  backtest: () => [...pipelineKeys.all, "backtest"] as const,
 };
 
 /* ---------------------------------------------------------------------------
@@ -89,6 +91,18 @@ export function useBaseline() {
     queryFn: async () => {
       if (!actor) throw new Error("Backend is not ready");
       return actor.getBaseline();
+    },
+    enabled: !!actor && !isFetching,
+  });
+}
+
+export function useBacktest() {
+  const { actor, isFetching } = useActor(createActor);
+  return useQuery<BacktestResult>({
+    queryKey: pipelineKeys.backtest(),
+    queryFn: async () => {
+      if (!actor) throw new Error("Backend is not ready");
+      return actor.getBacktest();
     },
     enabled: !!actor && !isFetching,
   });

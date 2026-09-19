@@ -14,6 +14,7 @@ import PipelineStats "pipeline-stats";
 mixin (
   deals : Map.Map<Nat, Types.Deal>,
   baselineDeals : List.List<Types.Deal>,
+  closedHistory : List.List<Types.Deal>,
   state : { var nextDealId : Nat },
 ) {
   // ---------------------------------------------------------------------------
@@ -26,11 +27,15 @@ mixin (
     let seed = SampleDeals.seed(nowMs);
     deals.clear();
     baselineDeals.clear();
+    closedHistory.clear();
     for (deal in seed.deals.values()) {
       deals.add(deal.id, deal);
     };
     for (deal in seed.baseline.values()) {
       baselineDeals.add(deal);
+    };
+    for (deal in seed.closedHistory.values()) {
+      closedHistory.add(deal);
     };
     state.nextDealId := seed.deals.size() + 1;
   };

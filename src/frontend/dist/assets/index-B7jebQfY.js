@@ -41226,7 +41226,7 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$A = [
+const __iconNode$B = [
   [
     "path",
     {
@@ -41235,7 +41235,18 @@ const __iconNode$A = [
     }
   ]
 ];
-const Activity = createLucideIcon("activity", __iconNode$A);
+const Activity = createLucideIcon("activity", __iconNode$B);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$A = [
+  ["path", { d: "m7 7 10 10", key: "1fmybs" }],
+  ["path", { d: "M17 7v10H7", key: "6fjiku" }]
+];
+const ArrowDownRight = createLucideIcon("arrow-down-right", __iconNode$A);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41243,10 +41254,10 @@ const Activity = createLucideIcon("activity", __iconNode$A);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$z = [
-  ["path", { d: "m7 7 10 10", key: "1fmybs" }],
-  ["path", { d: "M17 7v10H7", key: "6fjiku" }]
+  ["path", { d: "M12 5v14", key: "s699le" }],
+  ["path", { d: "m19 12-7 7-7-7", key: "1idqje" }]
 ];
-const ArrowDownRight = createLucideIcon("arrow-down-right", __iconNode$z);
+const ArrowDown = createLucideIcon("arrow-down", __iconNode$z);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41254,10 +41265,10 @@ const ArrowDownRight = createLucideIcon("arrow-down-right", __iconNode$z);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$y = [
-  ["path", { d: "M12 5v14", key: "s699le" }],
-  ["path", { d: "m19 12-7 7-7-7", key: "1idqje" }]
+  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+  ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowDown = createLucideIcon("arrow-down", __iconNode$y);
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$y);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41265,10 +41276,10 @@ const ArrowDown = createLucideIcon("arrow-down", __iconNode$y);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$x = [
-  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
-  ["path", { d: "M19 12H5", key: "x3x0zl" }]
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$x);
+const ArrowRight = createLucideIcon("arrow-right", __iconNode$x);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41276,10 +41287,10 @@ const ArrowLeft = createLucideIcon("arrow-left", __iconNode$x);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$w = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
+  ["path", { d: "M7 7h10v10", key: "1tivn9" }],
+  ["path", { d: "M7 17 17 7", key: "1vkiza" }]
 ];
-const ArrowRight = createLucideIcon("arrow-right", __iconNode$w);
+const ArrowUpRight = createLucideIcon("arrow-up-right", __iconNode$w);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41287,10 +41298,10 @@ const ArrowRight = createLucideIcon("arrow-right", __iconNode$w);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$v = [
-  ["path", { d: "M7 7h10v10", key: "1tivn9" }],
-  ["path", { d: "M7 17 17 7", key: "1vkiza" }]
+  ["path", { d: "m5 12 7-7 7 7", key: "hav0vg" }],
+  ["path", { d: "M12 19V5", key: "x0mq9r" }]
 ];
-const ArrowUpRight = createLucideIcon("arrow-up-right", __iconNode$v);
+const ArrowUp = createLucideIcon("arrow-up", __iconNode$v);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41298,17 +41309,6 @@ const ArrowUpRight = createLucideIcon("arrow-up-right", __iconNode$v);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$u = [
-  ["path", { d: "m5 12 7-7 7 7", key: "hav0vg" }],
-  ["path", { d: "M12 19V5", key: "x0mq9r" }]
-];
-const ArrowUp = createLucideIcon("arrow-up", __iconNode$u);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$t = [
   ["path", { d: "M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z", key: "1b4qmf" }],
   ["path", { d: "M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2", key: "i71pzd" }],
   ["path", { d: "M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2", key: "10jefs" }],
@@ -41317,7 +41317,21 @@ const __iconNode$t = [
   ["path", { d: "M10 14h4", key: "kelpxr" }],
   ["path", { d: "M10 18h4", key: "1ulq68" }]
 ];
-const Building2 = createLucideIcon("building-2", __iconNode$t);
+const Building2 = createLucideIcon("building-2", __iconNode$u);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$t = [
+  ["path", { d: "M8 2v4", key: "1cmpym" }],
+  ["path", { d: "M16 2v4", key: "4m81vk" }],
+  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
+  ["path", { d: "M3 10h18", key: "8toen8" }],
+  ["path", { d: "m9 16 2 2 4-4", key: "19s6y9" }]
+];
+const CalendarCheck = createLucideIcon("calendar-check", __iconNode$t);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41325,20 +41339,6 @@ const Building2 = createLucideIcon("building-2", __iconNode$t);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$s = [
-  ["path", { d: "M8 2v4", key: "1cmpym" }],
-  ["path", { d: "M16 2v4", key: "4m81vk" }],
-  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
-  ["path", { d: "M3 10h18", key: "8toen8" }],
-  ["path", { d: "m9 16 2 2 4-4", key: "19s6y9" }]
-];
-const CalendarCheck = createLucideIcon("calendar-check", __iconNode$s);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$r = [
   ["path", { d: "M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5", key: "1osxxc" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["path", { d: "M8 2v4", key: "1cmpym" }],
@@ -41346,31 +41346,42 @@ const __iconNode$r = [
   ["path", { d: "M17.5 17.5 16 16.3V14", key: "akvzfd" }],
   ["circle", { cx: "16", cy: "16", r: "6", key: "qoo3c4" }]
 ];
-const CalendarClock = createLucideIcon("calendar-clock", __iconNode$r);
+const CalendarClock = createLucideIcon("calendar-clock", __iconNode$s);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$q = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$q);
+const __iconNode$r = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$r);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$p = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$p);
+const __iconNode$q = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$o = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$o);
+const __iconNode$p = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$p);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$o = [
+  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
+  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
+];
+const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$o);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41378,10 +41389,11 @@ const ChevronUp = createLucideIcon("chevron-up", __iconNode$o);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$n = [
-  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
-  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
 ];
-const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$n);
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$n);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41389,11 +41401,11 @@ const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$n);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$m = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+  ["path", { d: "M12 17h.01", key: "p32p05" }],
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z", key: "1mlx9k" }],
+  ["path", { d: "M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3", key: "mhlwft" }]
 ];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$m);
+const FileQuestion = createLucideIcon("file-question", __iconNode$m);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41401,11 +41413,11 @@ const CircleAlert = createLucideIcon("circle-alert", __iconNode$m);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$l = [
-  ["path", { d: "M12 17h.01", key: "p32p05" }],
-  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z", key: "1mlx9k" }],
-  ["path", { d: "M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3", key: "mhlwft" }]
+  ["path", { d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8", key: "1357e3" }],
+  ["path", { d: "M3 3v5h5", key: "1xhq8a" }],
+  ["path", { d: "M12 7v5l4 2", key: "1fdv2h" }]
 ];
-const FileQuestion = createLucideIcon("file-question", __iconNode$l);
+const History = createLucideIcon("history", __iconNode$l);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41879,6 +41891,11 @@ function formatCurrencyCompact(value) {
 function formatNumber(value) {
   if (value === null || value === void 0) return "—";
   return NUMBER.format(Number(value));
+}
+function formatPercentDelta(value, digits = 0) {
+  if (value === null || value === void 0 || Number.isNaN(value)) return "—";
+  const sign2 = value > 0 ? "+" : value < 0 ? "−" : "";
+  return `${sign2}${Math.abs(value * 100).toFixed(digits)}%`;
 }
 function formatDate(value) {
   const date2 = toDate(value);
@@ -47447,6 +47464,7 @@ const Deal = Record({
   "stage": DealStage$1,
   "notes": Text$1,
   "account": Text$1,
+  "repEstimate": Opt(Nat),
   "activityLast30Days": Nat,
   "amount": Nat
 });
@@ -47533,6 +47551,29 @@ const PipelineResult_2 = Variant({
   "ok": Forecast,
   "err": PipelineError
 });
+const BacktestQuarterRow = Record({
+  "modelForecast": Nat,
+  "modelErrorPct": Float64,
+  "repErrorPct": Float64,
+  "quarterEnd": Int,
+  "wonDealCount": Nat,
+  "repEstimateTotal": Nat,
+  "quarterLabel": Text$1,
+  "repErrorDelta": Int,
+  "modelErrorDelta": Int,
+  "quarterStart": Int,
+  "dealCount": Nat,
+  "actualWon": Nat,
+  "estimatedDealCount": Nat
+});
+const BacktestResult = Record({
+  "computedAt": Int,
+  "rows": Vec(BacktestQuarterRow),
+  "verdict": Text$1,
+  "avgRepErrorPct": Float64,
+  "holdoutQuarterCount": Nat,
+  "avgModelErrorPct": Float64
+});
 const StageStats = Record({
   "totalValue": Nat,
   "weightedValue": Nat,
@@ -47560,6 +47601,7 @@ Service({
   "generateDealReasoning": Func([Nat], [PipelineResult_3], []),
   "generateForecastRationale": Func([], [PipelineResult_2], []),
   "getApiDoc": Func([], [Text$1], ["query"]),
+  "getBacktest": Func([], [BacktestResult], ["query"]),
   "getBaseline": Func([], [HistoricalBaseline], ["query"]),
   "getCallerUserRole": Func([], [UserRole], ["query"]),
   "getDeal": Func([Nat], [Opt(Deal)], ["query"]),
@@ -47662,6 +47704,7 @@ const idlFactory = ({ IDL: IDL2 }) => {
     "stage": DealStage2,
     "notes": IDL2.Text,
     "account": IDL2.Text,
+    "repEstimate": IDL2.Opt(IDL2.Nat),
     "activityLast30Days": IDL2.Nat,
     "amount": IDL2.Nat
   });
@@ -47745,6 +47788,29 @@ const idlFactory = ({ IDL: IDL2 }) => {
     "ok": Forecast2,
     "err": PipelineError2
   });
+  const BacktestQuarterRow2 = IDL2.Record({
+    "modelForecast": IDL2.Nat,
+    "modelErrorPct": IDL2.Float64,
+    "repErrorPct": IDL2.Float64,
+    "quarterEnd": IDL2.Int,
+    "wonDealCount": IDL2.Nat,
+    "repEstimateTotal": IDL2.Nat,
+    "quarterLabel": IDL2.Text,
+    "repErrorDelta": IDL2.Int,
+    "modelErrorDelta": IDL2.Int,
+    "quarterStart": IDL2.Int,
+    "dealCount": IDL2.Nat,
+    "actualWon": IDL2.Nat,
+    "estimatedDealCount": IDL2.Nat
+  });
+  const BacktestResult2 = IDL2.Record({
+    "computedAt": IDL2.Int,
+    "rows": IDL2.Vec(BacktestQuarterRow2),
+    "verdict": IDL2.Text,
+    "avgRepErrorPct": IDL2.Float64,
+    "holdoutQuarterCount": IDL2.Nat,
+    "avgModelErrorPct": IDL2.Float64
+  });
   const StageStats2 = IDL2.Record({
     "totalValue": IDL2.Nat,
     "weightedValue": IDL2.Nat,
@@ -47772,6 +47838,7 @@ const idlFactory = ({ IDL: IDL2 }) => {
     "generateDealReasoning": IDL2.Func([IDL2.Nat], [PipelineResult_32], []),
     "generateForecastRationale": IDL2.Func([], [PipelineResult_22], []),
     "getApiDoc": IDL2.Func([], [IDL2.Text], ["query"]),
+    "getBacktest": IDL2.Func([], [BacktestResult2], ["query"]),
     "getBaseline": IDL2.Func([], [HistoricalBaseline2], ["query"]),
     "getCallerUserRole": IDL2.Func([], [UserRole2], ["query"]),
     "getDeal": IDL2.Func([IDL2.Nat], [IDL2.Opt(Deal2)], ["query"]),
@@ -47812,6 +47879,14 @@ const idlFactory = ({ IDL: IDL2 }) => {
     )
   });
 };
+function candid_some(value) {
+  return [
+    value
+  ];
+}
+function candid_none() {
+  return [];
+}
 function record_opt_to_undefined(arg) {
   return arg == null ? void 0 : arg;
 }
@@ -47898,98 +47973,98 @@ class Backend {
     if (this.processError) {
       try {
         const result = await this.actor.addStakeholder(arg0, to_candid_Stakeholder_n5(this._uploadFile, this._downloadFile, arg1));
-        return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+        return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.addStakeholder(arg0, to_candid_Stakeholder_n5(this._uploadFile, this._downloadFile, arg1));
-      return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+      return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
     }
   }
   async assignCallerUserRole(arg0, arg1) {
     if (this.processError) {
       try {
-        const result = await this.actor.assignCallerUserRole(arg0, to_candid_UserRole_n26(this._uploadFile, this._downloadFile, arg1));
+        const result = await this.actor.assignCallerUserRole(arg0, to_candid_UserRole_n22(this._uploadFile, this._downloadFile, arg1));
         return result;
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
-      const result = await this.actor.assignCallerUserRole(arg0, to_candid_UserRole_n26(this._uploadFile, this._downloadFile, arg1));
+      const result = await this.actor.assignCallerUserRole(arg0, to_candid_UserRole_n22(this._uploadFile, this._downloadFile, arg1));
       return result;
     }
   }
   async createDeal(arg0) {
     if (this.processError) {
       try {
-        const result = await this.actor.createDeal(to_candid_Deal_n28(this._uploadFile, this._downloadFile, arg0));
-        return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+        const result = await this.actor.createDeal(to_candid_Deal_n23(this._uploadFile, this._downloadFile, arg0));
+        return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
-      const result = await this.actor.createDeal(to_candid_Deal_n28(this._uploadFile, this._downloadFile, arg0));
-      return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+      const result = await this.actor.createDeal(to_candid_Deal_n23(this._uploadFile, this._downloadFile, arg0));
+      return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
     }
   }
   async deleteDeal(arg0) {
     if (this.processError) {
       try {
         const result = await this.actor.deleteDeal(arg0);
-        return from_candid_PipelineResult_1_n33(this._uploadFile, this._downloadFile, result);
+        return from_candid_PipelineResult_1_n27(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.deleteDeal(arg0);
-      return from_candid_PipelineResult_1_n33(this._uploadFile, this._downloadFile, result);
+      return from_candid_PipelineResult_1_n27(this._uploadFile, this._downloadFile, result);
     }
   }
   async execute(arg0) {
     if (this.processError) {
       try {
         const result = await this.actor.execute(arg0);
-        return from_candid_Result_n35(this._uploadFile, this._downloadFile, result);
+        return from_candid_Result_n29(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.execute(arg0);
-      return from_candid_Result_n35(this._uploadFile, this._downloadFile, result);
+      return from_candid_Result_n29(this._uploadFile, this._downloadFile, result);
     }
   }
   async generateDealReasoning(arg0) {
     if (this.processError) {
       try {
         const result = await this.actor.generateDealReasoning(arg0);
-        return from_candid_PipelineResult_3_n43(this._uploadFile, this._downloadFile, result);
+        return from_candid_PipelineResult_3_n37(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.generateDealReasoning(arg0);
-      return from_candid_PipelineResult_3_n43(this._uploadFile, this._downloadFile, result);
+      return from_candid_PipelineResult_3_n37(this._uploadFile, this._downloadFile, result);
     }
   }
   async generateForecastRationale() {
     if (this.processError) {
       try {
         const result = await this.actor.generateForecastRationale();
-        return from_candid_PipelineResult_2_n50(this._uploadFile, this._downloadFile, result);
+        return from_candid_PipelineResult_2_n43(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.generateForecastRationale();
-      return from_candid_PipelineResult_2_n50(this._uploadFile, this._downloadFile, result);
+      return from_candid_PipelineResult_2_n43(this._uploadFile, this._downloadFile, result);
     }
   }
   async getApiDoc() {
@@ -48006,88 +48081,102 @@ class Backend {
       return result;
     }
   }
+  async getBacktest() {
+    if (this.processError) {
+      try {
+        const result = await this.actor.getBacktest();
+        return result;
+      } catch (e3) {
+        this.processError(e3);
+        throw new Error("unreachable");
+      }
+    } else {
+      const result = await this.actor.getBacktest();
+      return result;
+    }
+  }
   async getBaseline() {
     if (this.processError) {
       try {
         const result = await this.actor.getBaseline();
-        return from_candid_HistoricalBaseline_n54(this._uploadFile, this._downloadFile, result);
+        return from_candid_HistoricalBaseline_n47(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.getBaseline();
-      return from_candid_HistoricalBaseline_n54(this._uploadFile, this._downloadFile, result);
+      return from_candid_HistoricalBaseline_n47(this._uploadFile, this._downloadFile, result);
     }
   }
   async getCallerUserRole() {
     if (this.processError) {
       try {
         const result = await this.actor.getCallerUserRole();
-        return from_candid_UserRole_n59(this._uploadFile, this._downloadFile, result);
+        return from_candid_UserRole_n52(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.getCallerUserRole();
-      return from_candid_UserRole_n59(this._uploadFile, this._downloadFile, result);
+      return from_candid_UserRole_n52(this._uploadFile, this._downloadFile, result);
     }
   }
   async getDeal(arg0) {
     if (this.processError) {
       try {
         const result = await this.actor.getDeal(arg0);
-        return from_candid_opt_n61(this._uploadFile, this._downloadFile, result);
+        return from_candid_opt_n53(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.getDeal(arg0);
-      return from_candid_opt_n61(this._uploadFile, this._downloadFile, result);
+      return from_candid_opt_n53(this._uploadFile, this._downloadFile, result);
     }
   }
   async getDealReasoning(arg0) {
     if (this.processError) {
       try {
         const result = await this.actor.getDealReasoning(arg0);
-        return from_candid_opt_n62(this._uploadFile, this._downloadFile, result);
+        return from_candid_opt_n54(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.getDealReasoning(arg0);
-      return from_candid_opt_n62(this._uploadFile, this._downloadFile, result);
+      return from_candid_opt_n54(this._uploadFile, this._downloadFile, result);
     }
   }
   async getForecast() {
     if (this.processError) {
       try {
         const result = await this.actor.getForecast();
-        return from_candid_Forecast_n52(this._uploadFile, this._downloadFile, result);
+        return from_candid_Forecast_n45(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.getForecast();
-      return from_candid_Forecast_n52(this._uploadFile, this._downloadFile, result);
+      return from_candid_Forecast_n45(this._uploadFile, this._downloadFile, result);
     }
   }
   async getForecastRationale() {
     if (this.processError) {
       try {
         const result = await this.actor.getForecastRationale();
-        return from_candid_opt_n63(this._uploadFile, this._downloadFile, result);
+        return from_candid_opt_n55(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.getForecastRationale();
-      return from_candid_opt_n63(this._uploadFile, this._downloadFile, result);
+      return from_candid_opt_n55(this._uploadFile, this._downloadFile, result);
     }
   }
   async isCallerAdmin() {
@@ -48108,42 +48197,42 @@ class Backend {
     if (this.processError) {
       try {
         const result = await this.actor.listDealRisks();
-        return from_candid_vec_n64(this._uploadFile, this._downloadFile, result);
+        return from_candid_vec_n56(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.listDealRisks();
-      return from_candid_vec_n64(this._uploadFile, this._downloadFile, result);
+      return from_candid_vec_n56(this._uploadFile, this._downloadFile, result);
     }
   }
   async listDeals() {
     if (this.processError) {
       try {
         const result = await this.actor.listDeals();
-        return from_candid_vec_n65(this._uploadFile, this._downloadFile, result);
+        return from_candid_vec_n57(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.listDeals();
-      return from_candid_vec_n65(this._uploadFile, this._downloadFile, result);
+      return from_candid_vec_n57(this._uploadFile, this._downloadFile, result);
     }
   }
   async resetSampleData() {
     if (this.processError) {
       try {
         const result = await this.actor.resetSampleData();
-        return from_candid_PipelineResult_1_n33(this._uploadFile, this._downloadFile, result);
+        return from_candid_PipelineResult_1_n27(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.resetSampleData();
-      return from_candid_PipelineResult_1_n33(this._uploadFile, this._downloadFile, result);
+      return from_candid_PipelineResult_1_n27(this._uploadFile, this._downloadFile, result);
     }
   }
   async schema() {
@@ -48178,257 +48267,261 @@ class Backend {
     if (this.processError) {
       try {
         const result = await this.actor.storeAddStakeholder(arg0, to_candid_Stakeholder_n5(this._uploadFile, this._downloadFile, arg1));
-        return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+        return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.storeAddStakeholder(arg0, to_candid_Stakeholder_n5(this._uploadFile, this._downloadFile, arg1));
-      return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+      return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
     }
   }
   async storeBaseline() {
     if (this.processError) {
       try {
         const result = await this.actor.storeBaseline();
-        return from_candid_HistoricalBaseline_n54(this._uploadFile, this._downloadFile, result);
+        return from_candid_HistoricalBaseline_n47(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.storeBaseline();
-      return from_candid_HistoricalBaseline_n54(this._uploadFile, this._downloadFile, result);
+      return from_candid_HistoricalBaseline_n47(this._uploadFile, this._downloadFile, result);
     }
   }
   async storeCreateDeal(arg0) {
     if (this.processError) {
       try {
-        const result = await this.actor.storeCreateDeal(to_candid_Deal_n28(this._uploadFile, this._downloadFile, arg0));
-        return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+        const result = await this.actor.storeCreateDeal(to_candid_Deal_n23(this._uploadFile, this._downloadFile, arg0));
+        return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
-      const result = await this.actor.storeCreateDeal(to_candid_Deal_n28(this._uploadFile, this._downloadFile, arg0));
-      return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+      const result = await this.actor.storeCreateDeal(to_candid_Deal_n23(this._uploadFile, this._downloadFile, arg0));
+      return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
     }
   }
   async storeDeleteDeal(arg0) {
     if (this.processError) {
       try {
         const result = await this.actor.storeDeleteDeal(arg0);
-        return from_candid_PipelineResult_1_n33(this._uploadFile, this._downloadFile, result);
+        return from_candid_PipelineResult_1_n27(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.storeDeleteDeal(arg0);
-      return from_candid_PipelineResult_1_n33(this._uploadFile, this._downloadFile, result);
+      return from_candid_PipelineResult_1_n27(this._uploadFile, this._downloadFile, result);
     }
   }
   async storeGetDeal(arg0) {
     if (this.processError) {
       try {
         const result = await this.actor.storeGetDeal(arg0);
-        return from_candid_opt_n61(this._uploadFile, this._downloadFile, result);
+        return from_candid_opt_n53(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.storeGetDeal(arg0);
-      return from_candid_opt_n61(this._uploadFile, this._downloadFile, result);
+      return from_candid_opt_n53(this._uploadFile, this._downloadFile, result);
     }
   }
   async storeListDeals() {
     if (this.processError) {
       try {
         const result = await this.actor.storeListDeals();
-        return from_candid_vec_n65(this._uploadFile, this._downloadFile, result);
+        return from_candid_vec_n57(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.storeListDeals();
-      return from_candid_vec_n65(this._uploadFile, this._downloadFile, result);
+      return from_candid_vec_n57(this._uploadFile, this._downloadFile, result);
     }
   }
   async storeUpdateDeal(arg0, arg1) {
     if (this.processError) {
       try {
-        const result = await this.actor.storeUpdateDeal(arg0, to_candid_Deal_n28(this._uploadFile, this._downloadFile, arg1));
-        return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+        const result = await this.actor.storeUpdateDeal(arg0, to_candid_Deal_n23(this._uploadFile, this._downloadFile, arg1));
+        return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
-      const result = await this.actor.storeUpdateDeal(arg0, to_candid_Deal_n28(this._uploadFile, this._downloadFile, arg1));
-      return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+      const result = await this.actor.storeUpdateDeal(arg0, to_candid_Deal_n23(this._uploadFile, this._downloadFile, arg1));
+      return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
     }
   }
   async storeUpdateStakeholder(arg0, arg1, arg2) {
     if (this.processError) {
       try {
         const result = await this.actor.storeUpdateStakeholder(arg0, arg1, to_candid_Stakeholder_n5(this._uploadFile, this._downloadFile, arg2));
-        return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+        return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.storeUpdateStakeholder(arg0, arg1, to_candid_Stakeholder_n5(this._uploadFile, this._downloadFile, arg2));
-      return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+      return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
     }
   }
   async updateDeal(arg0, arg1) {
     if (this.processError) {
       try {
-        const result = await this.actor.updateDeal(arg0, to_candid_Deal_n28(this._uploadFile, this._downloadFile, arg1));
-        return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+        const result = await this.actor.updateDeal(arg0, to_candid_Deal_n23(this._uploadFile, this._downloadFile, arg1));
+        return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
-      const result = await this.actor.updateDeal(arg0, to_candid_Deal_n28(this._uploadFile, this._downloadFile, arg1));
-      return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+      const result = await this.actor.updateDeal(arg0, to_candid_Deal_n23(this._uploadFile, this._downloadFile, arg1));
+      return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
     }
   }
   async updateStakeholder(arg0, arg1, arg2) {
     if (this.processError) {
       try {
         const result = await this.actor.updateStakeholder(arg0, arg1, to_candid_Stakeholder_n5(this._uploadFile, this._downloadFile, arg2));
-        return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+        return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
       } catch (e3) {
         this.processError(e3);
         throw new Error("unreachable");
       }
     } else {
       const result = await this.actor.updateStakeholder(arg0, arg1, to_candid_Stakeholder_n5(this._uploadFile, this._downloadFile, arg2));
-      return from_candid_PipelineResult_n11(this._uploadFile, this._downloadFile, result);
+      return from_candid_PipelineResult_n9(this._uploadFile, this._downloadFile, result);
     }
   }
 }
-function from_candid_Cell_n39(_uploadFile, _downloadFile, value) {
+function from_candid_Cell_n33(_uploadFile, _downloadFile, value) {
+  return from_candid_record_n34(_uploadFile, _downloadFile, value);
+}
+function from_candid_DealRisk_n39(_uploadFile, _downloadFile, value) {
   return from_candid_record_n40(_uploadFile, _downloadFile, value);
 }
-function from_candid_DealRisk_n45(_uploadFile, _downloadFile, value) {
-  return from_candid_record_n46(_uploadFile, _downloadFile, value);
+function from_candid_DealStage_n18(_uploadFile, _downloadFile, value) {
+  return "prospecting" in value ? "prospecting" : "closedWon" in value ? "closedWon" : "proposal" in value ? "proposal" : "negotiation" in value ? "negotiation" : "qualification" in value ? "qualification" : "closedLost" in value ? "closedLost" : value;
 }
-function from_candid_DealStage_n22(_uploadFile, _downloadFile, value) {
-  return from_candid_variant_n23(_uploadFile, _downloadFile, value);
+function from_candid_Deal_n11(_uploadFile, _downloadFile, value) {
+  return from_candid_record_n12(_uploadFile, _downloadFile, value);
 }
-function from_candid_Deal_n13(_uploadFile, _downloadFile, value) {
-  return from_candid_record_n14(_uploadFile, _downloadFile, value);
-}
-function from_candid_EngagementLevel_n20(_uploadFile, _downloadFile, value) {
-  return from_candid_variant_n21(_uploadFile, _downloadFile, value);
+function from_candid_EngagementLevel_n17(_uploadFile, _downloadFile, value) {
+  return "low" in value ? "low" : "high" in value ? "high" : "none" in value ? "none" : "medium" in value ? "medium" : value;
 }
 function from_candid_Error_n3(_uploadFile, _downloadFile, value) {
   return from_candid_variant_n4(_uploadFile, _downloadFile, value);
 }
-function from_candid_Forecast_n52(_uploadFile, _downloadFile, value) {
-  return from_candid_record_n53(_uploadFile, _downloadFile, value);
+function from_candid_Forecast_n45(_uploadFile, _downloadFile, value) {
+  return from_candid_record_n46(_uploadFile, _downloadFile, value);
 }
-function from_candid_HistoricalBaseline_n54(_uploadFile, _downloadFile, value) {
-  return from_candid_record_n55(_uploadFile, _downloadFile, value);
+function from_candid_HistoricalBaseline_n47(_uploadFile, _downloadFile, value) {
+  return from_candid_record_n48(_uploadFile, _downloadFile, value);
 }
-function from_candid_PipelineError_n24(_uploadFile, _downloadFile, value) {
-  return from_candid_variant_n25(_uploadFile, _downloadFile, value);
+function from_candid_PipelineError_n20(_uploadFile, _downloadFile, value) {
+  return from_candid_variant_n21(_uploadFile, _downloadFile, value);
 }
-function from_candid_PipelineResult_1_n33(_uploadFile, _downloadFile, value) {
-  return from_candid_variant_n34(_uploadFile, _downloadFile, value);
+function from_candid_PipelineResult_1_n27(_uploadFile, _downloadFile, value) {
+  return from_candid_variant_n28(_uploadFile, _downloadFile, value);
 }
-function from_candid_PipelineResult_2_n50(_uploadFile, _downloadFile, value) {
-  return from_candid_variant_n51(_uploadFile, _downloadFile, value);
-}
-function from_candid_PipelineResult_3_n43(_uploadFile, _downloadFile, value) {
+function from_candid_PipelineResult_2_n43(_uploadFile, _downloadFile, value) {
   return from_candid_variant_n44(_uploadFile, _downloadFile, value);
 }
-function from_candid_PipelineResult_n11(_uploadFile, _downloadFile, value) {
-  return from_candid_variant_n12(_uploadFile, _downloadFile, value);
+function from_candid_PipelineResult_3_n37(_uploadFile, _downloadFile, value) {
+  return from_candid_variant_n38(_uploadFile, _downloadFile, value);
+}
+function from_candid_PipelineResult_n9(_uploadFile, _downloadFile, value) {
+  return from_candid_variant_n10(_uploadFile, _downloadFile, value);
 }
 function from_candid_Result__1_n1(_uploadFile, _downloadFile, value) {
   return from_candid_variant_n2(_uploadFile, _downloadFile, value);
 }
-function from_candid_Result_n35(_uploadFile, _downloadFile, value) {
-  return from_candid_record_n36(_uploadFile, _downloadFile, value);
+function from_candid_Result_n29(_uploadFile, _downloadFile, value) {
+  return from_candid_record_n30(_uploadFile, _downloadFile, value);
 }
-function from_candid_RiskBucket_n47(_uploadFile, _downloadFile, value) {
-  return from_candid_variant_n48(_uploadFile, _downloadFile, value);
+function from_candid_RiskBucket_n41(_uploadFile, _downloadFile, value) {
+  return "low" in value ? "low" : "high" in value ? "high" : "medium" in value ? "medium" : value;
 }
-function from_candid_StageStats_n57(_uploadFile, _downloadFile, value) {
-  return from_candid_record_n58(_uploadFile, _downloadFile, value);
+function from_candid_StageStats_n50(_uploadFile, _downloadFile, value) {
+  return from_candid_record_n51(_uploadFile, _downloadFile, value);
 }
-function from_candid_StakeholderRole_n18(_uploadFile, _downloadFile, value) {
-  return from_candid_variant_n19(_uploadFile, _downloadFile, value);
+function from_candid_StakeholderRole_n16(_uploadFile, _downloadFile, value) {
+  return "economicBuyer" in value ? "economicBuyer" : "blocker" in value ? "blocker" : "procurement" in value ? "procurement" : "champion" in value ? "champion" : "technicalEvaluator" in value ? "technicalEvaluator" : value;
 }
-function from_candid_Stakeholder_n16(_uploadFile, _downloadFile, value) {
-  return from_candid_record_n17(_uploadFile, _downloadFile, value);
+function from_candid_Stakeholder_n14(_uploadFile, _downloadFile, value) {
+  return from_candid_record_n15(_uploadFile, _downloadFile, value);
 }
-function from_candid_UserRole_n59(_uploadFile, _downloadFile, value) {
-  return from_candid_variant_n60(_uploadFile, _downloadFile, value);
+function from_candid_UserRole_n52(_uploadFile, _downloadFile, value) {
+  return "admin" in value ? "admin" : "user" in value ? "user" : "guest" in value ? "guest" : value;
 }
-function from_candid_Value_n41(_uploadFile, _downloadFile, value) {
-  return from_candid_variant_n42(_uploadFile, _downloadFile, value);
+function from_candid_Value_n35(_uploadFile, _downloadFile, value) {
+  return from_candid_variant_n36(_uploadFile, _downloadFile, value);
 }
-function from_candid_opt_n49(_uploadFile, _downloadFile, value) {
+function from_candid_opt_n19(_uploadFile, _downloadFile, value) {
   return value.length === 0 ? null : value[0];
 }
-function from_candid_opt_n61(_uploadFile, _downloadFile, value) {
-  return value.length === 0 ? null : from_candid_Deal_n13(_uploadFile, _downloadFile, value[0]);
-}
-function from_candid_opt_n62(_uploadFile, _downloadFile, value) {
-  return value.length === 0 ? null : from_candid_DealRisk_n45(_uploadFile, _downloadFile, value[0]);
-}
-function from_candid_opt_n63(_uploadFile, _downloadFile, value) {
+function from_candid_opt_n42(_uploadFile, _downloadFile, value) {
   return value.length === 0 ? null : value[0];
 }
-function from_candid_record_n14(_uploadFile, _downloadFile, value) {
+function from_candid_opt_n53(_uploadFile, _downloadFile, value) {
+  return value.length === 0 ? null : from_candid_Deal_n11(_uploadFile, _downloadFile, value[0]);
+}
+function from_candid_opt_n54(_uploadFile, _downloadFile, value) {
+  return value.length === 0 ? null : from_candid_DealRisk_n39(_uploadFile, _downloadFile, value[0]);
+}
+function from_candid_opt_n55(_uploadFile, _downloadFile, value) {
+  return value.length === 0 ? null : value[0];
+}
+function from_candid_record_n12(_uploadFile, _downloadFile, value) {
   return {
     id: value.id,
     activityPrior30Days: value.activityPrior30Days,
     owner: value.owner,
-    stakeholders: from_candid_vec_n15(_uploadFile, _downloadFile, value.stakeholders),
+    stakeholders: from_candid_vec_n13(_uploadFile, _downloadFile, value.stakeholders),
     name: value.name,
     createdDate: value.createdDate,
     closeDatePushes: value.closeDatePushes,
     lastActivityDate: value.lastActivityDate,
     expectedCloseDate: value.expectedCloseDate,
-    stage: from_candid_DealStage_n22(_uploadFile, _downloadFile, value.stage),
+    stage: from_candid_DealStage_n18(_uploadFile, _downloadFile, value.stage),
     notes: value.notes,
     account: value.account,
+    repEstimate: record_opt_to_undefined(from_candid_opt_n19(_uploadFile, _downloadFile, value.repEstimate)),
     activityLast30Days: value.activityLast30Days,
     amount: value.amount
   };
 }
-function from_candid_record_n17(_uploadFile, _downloadFile, value) {
+function from_candid_record_n15(_uploadFile, _downloadFile, value) {
   return {
     name: value.name,
-    role: from_candid_StakeholderRole_n18(_uploadFile, _downloadFile, value.role),
+    role: from_candid_StakeholderRole_n16(_uploadFile, _downloadFile, value.role),
     lastContacted: value.lastContacted,
-    engagement: from_candid_EngagementLevel_n20(_uploadFile, _downloadFile, value.engagement)
+    engagement: from_candid_EngagementLevel_n17(_uploadFile, _downloadFile, value.engagement)
   };
 }
-function from_candid_record_n36(_uploadFile, _downloadFile, value) {
+function from_candid_record_n30(_uploadFile, _downloadFile, value) {
   return {
     hasMore: value.hasMore,
-    rows: from_candid_vec_n37(_uploadFile, _downloadFile, value.rows)
+    rows: from_candid_vec_n31(_uploadFile, _downloadFile, value.rows)
   };
 }
-function from_candid_record_n40(_uploadFile, _downloadFile, value) {
+function from_candid_record_n34(_uploadFile, _downloadFile, value) {
   return {
-    value: from_candid_Value_n41(_uploadFile, _downloadFile, value.value),
+    value: from_candid_Value_n35(_uploadFile, _downloadFile, value.value),
     name: value.name
   };
 }
-function from_candid_record_n46(_uploadFile, _downloadFile, value) {
+function from_candid_record_n40(_uploadFile, _downloadFile, value) {
   return {
     signals: value.signals,
     explanation: value.explanation,
@@ -48436,16 +48529,16 @@ function from_candid_record_n46(_uploadFile, _downloadFile, value) {
     score: value.score,
     recommendedAction: value.recommendedAction,
     topReason: value.topReason,
-    bucket: from_candid_RiskBucket_n47(_uploadFile, _downloadFile, value.bucket),
-    explanationGeneratedAt: record_opt_to_undefined(from_candid_opt_n49(_uploadFile, _downloadFile, value.explanationGeneratedAt))
+    bucket: from_candid_RiskBucket_n41(_uploadFile, _downloadFile, value.bucket),
+    explanationGeneratedAt: record_opt_to_undefined(from_candid_opt_n42(_uploadFile, _downloadFile, value.explanationGeneratedAt))
   };
 }
-function from_candid_record_n53(_uploadFile, _downloadFile, value) {
+function from_candid_record_n46(_uploadFile, _downloadFile, value) {
   return {
     low: value.low,
     byOwner: value.byOwner,
     computedAt: value.computedAt,
-    rationaleGeneratedAt: record_opt_to_undefined(from_candid_opt_n49(_uploadFile, _downloadFile, value.rationaleGeneratedAt)),
+    rationaleGeneratedAt: record_opt_to_undefined(from_candid_opt_n42(_uploadFile, _downloadFile, value.rationaleGeneratedAt)),
     high: value.high,
     byRiskBucket: value.byRiskBucket,
     byStage: value.byStage,
@@ -48457,36 +48550,33 @@ function from_candid_record_n53(_uploadFile, _downloadFile, value) {
     mostLikely: value.mostLikely
   };
 }
-function from_candid_record_n55(_uploadFile, _downloadFile, value) {
+function from_candid_record_n48(_uploadFile, _downloadFile, value) {
   return {
     forecastErrorPct: value.forecastErrorPct,
     overallWinRate: value.overallWinRate,
     avgDealCycleDays: value.avgDealCycleDays,
-    stageStats: from_candid_vec_n56(_uploadFile, _downloadFile, value.stageStats),
+    stageStats: from_candid_vec_n49(_uploadFile, _downloadFile, value.stageStats),
     closedDealCount: value.closedDealCount
   };
 }
-function from_candid_record_n58(_uploadFile, _downloadFile, value) {
+function from_candid_record_n51(_uploadFile, _downloadFile, value) {
   return {
     totalValue: value.totalValue,
     weightedValue: value.weightedValue,
-    stage: from_candid_DealStage_n22(_uploadFile, _downloadFile, value.stage),
+    stage: from_candid_DealStage_n18(_uploadFile, _downloadFile, value.stage),
     dealCount: value.dealCount,
     avgDaysInStage: value.avgDaysInStage,
     winRate: value.winRate
   };
 }
-function from_candid_variant_n12(_uploadFile, _downloadFile, value) {
+function from_candid_variant_n10(_uploadFile, _downloadFile, value) {
   return "ok" in value ? {
     __kind__: "ok",
-    ok: from_candid_Deal_n13(_uploadFile, _downloadFile, value.ok)
+    ok: from_candid_Deal_n11(_uploadFile, _downloadFile, value.ok)
   } : "err" in value ? {
     __kind__: "err",
-    err: from_candid_PipelineError_n24(_uploadFile, _downloadFile, value.err)
+    err: from_candid_PipelineError_n20(_uploadFile, _downloadFile, value.err)
   } : value;
-}
-function from_candid_variant_n19(_uploadFile, _downloadFile, value) {
-  return "economicBuyer" in value ? "economicBuyer" : "blocker" in value ? "blocker" : "procurement" in value ? "procurement" : "champion" in value ? "champion" : "technicalEvaluator" in value ? "technicalEvaluator" : value;
 }
 function from_candid_variant_n2(_uploadFile, _downloadFile, value) {
   return "ok" in value ? {
@@ -48498,12 +48588,6 @@ function from_candid_variant_n2(_uploadFile, _downloadFile, value) {
   } : value;
 }
 function from_candid_variant_n21(_uploadFile, _downloadFile, value) {
-  return "low" in value ? "low" : "high" in value ? "high" : "none" in value ? "none" : "medium" in value ? "medium" : value;
-}
-function from_candid_variant_n23(_uploadFile, _downloadFile, value) {
-  return "prospecting" in value ? "prospecting" : "closedWon" in value ? "closedWon" : "proposal" in value ? "proposal" : "negotiation" in value ? "negotiation" : "qualification" in value ? "qualification" : "closedLost" in value ? "closedLost" : value;
-}
-function from_candid_variant_n25(_uploadFile, _downloadFile, value) {
   return "notAuthorized" in value ? {
     __kind__: "notAuthorized",
     notAuthorized: value.notAuthorized
@@ -48515,13 +48599,43 @@ function from_candid_variant_n25(_uploadFile, _downloadFile, value) {
     notFound: value.notFound
   } : value;
 }
-function from_candid_variant_n34(_uploadFile, _downloadFile, value) {
+function from_candid_variant_n28(_uploadFile, _downloadFile, value) {
   return "ok" in value ? {
     __kind__: "ok",
     ok: value.ok
   } : "err" in value ? {
     __kind__: "err",
-    err: from_candid_PipelineError_n24(_uploadFile, _downloadFile, value.err)
+    err: from_candid_PipelineError_n20(_uploadFile, _downloadFile, value.err)
+  } : value;
+}
+function from_candid_variant_n36(_uploadFile, _downloadFile, value) {
+  return "int" in value ? {
+    __kind__: "int",
+    int: value.int
+  } : "nat" in value ? {
+    __kind__: "nat",
+    nat: value.nat
+  } : "float" in value ? {
+    __kind__: "float",
+    float: value.float
+  } : "bool" in value ? {
+    __kind__: "bool",
+    bool: value.bool
+  } : "null" in value ? {
+    __kind__: "null",
+    null: value.null
+  } : "text" in value ? {
+    __kind__: "text",
+    text: value.text
+  } : value;
+}
+function from_candid_variant_n38(_uploadFile, _downloadFile, value) {
+  return "ok" in value ? {
+    __kind__: "ok",
+    ok: from_candid_DealRisk_n39(_uploadFile, _downloadFile, value.ok)
+  } : "err" in value ? {
+    __kind__: "err",
+    err: from_candid_PipelineError_n20(_uploadFile, _downloadFile, value.err)
   } : value;
 }
 function from_candid_variant_n4(_uploadFile, _downloadFile, value) {
@@ -48557,134 +48671,34 @@ function from_candid_variant_n4(_uploadFile, _downloadFile, value) {
     FrontendOriginMismatch: value.FrontendOriginMismatch
   } : value;
 }
-function from_candid_variant_n42(_uploadFile, _downloadFile, value) {
-  return "int" in value ? {
-    __kind__: "int",
-    int: value.int
-  } : "nat" in value ? {
-    __kind__: "nat",
-    nat: value.nat
-  } : "float" in value ? {
-    __kind__: "float",
-    float: value.float
-  } : "bool" in value ? {
-    __kind__: "bool",
-    bool: value.bool
-  } : "null" in value ? {
-    __kind__: "null",
-    null: value.null
-  } : "text" in value ? {
-    __kind__: "text",
-    text: value.text
-  } : value;
-}
 function from_candid_variant_n44(_uploadFile, _downloadFile, value) {
   return "ok" in value ? {
     __kind__: "ok",
-    ok: from_candid_DealRisk_n45(_uploadFile, _downloadFile, value.ok)
+    ok: from_candid_Forecast_n45(_uploadFile, _downloadFile, value.ok)
   } : "err" in value ? {
     __kind__: "err",
-    err: from_candid_PipelineError_n24(_uploadFile, _downloadFile, value.err)
+    err: from_candid_PipelineError_n20(_uploadFile, _downloadFile, value.err)
   } : value;
 }
-function from_candid_variant_n48(_uploadFile, _downloadFile, value) {
-  return "low" in value ? "low" : "high" in value ? "high" : "medium" in value ? "medium" : value;
+function from_candid_vec_n13(_uploadFile, _downloadFile, value) {
+  return value.map((x3) => from_candid_Stakeholder_n14(_uploadFile, _downloadFile, x3));
 }
-function from_candid_variant_n51(_uploadFile, _downloadFile, value) {
-  return "ok" in value ? {
-    __kind__: "ok",
-    ok: from_candid_Forecast_n52(_uploadFile, _downloadFile, value.ok)
-  } : "err" in value ? {
-    __kind__: "err",
-    err: from_candid_PipelineError_n24(_uploadFile, _downloadFile, value.err)
-  } : value;
+function from_candid_vec_n31(_uploadFile, _downloadFile, value) {
+  return value.map((x3) => from_candid_vec_n32(_uploadFile, _downloadFile, x3));
 }
-function from_candid_variant_n60(_uploadFile, _downloadFile, value) {
-  return "admin" in value ? "admin" : "user" in value ? "user" : "guest" in value ? "guest" : value;
+function from_candid_vec_n32(_uploadFile, _downloadFile, value) {
+  return value.map((x3) => from_candid_Cell_n33(_uploadFile, _downloadFile, x3));
 }
-function from_candid_vec_n15(_uploadFile, _downloadFile, value) {
-  return value.map((x3) => from_candid_Stakeholder_n16(_uploadFile, _downloadFile, x3));
-}
-function from_candid_vec_n37(_uploadFile, _downloadFile, value) {
-  return value.map((x3) => from_candid_vec_n38(_uploadFile, _downloadFile, x3));
-}
-function from_candid_vec_n38(_uploadFile, _downloadFile, value) {
-  return value.map((x3) => from_candid_Cell_n39(_uploadFile, _downloadFile, x3));
+function from_candid_vec_n49(_uploadFile, _downloadFile, value) {
+  return value.map((x3) => from_candid_StageStats_n50(_uploadFile, _downloadFile, x3));
 }
 function from_candid_vec_n56(_uploadFile, _downloadFile, value) {
-  return value.map((x3) => from_candid_StageStats_n57(_uploadFile, _downloadFile, x3));
+  return value.map((x3) => from_candid_DealRisk_n39(_uploadFile, _downloadFile, x3));
 }
-function from_candid_vec_n64(_uploadFile, _downloadFile, value) {
-  return value.map((x3) => from_candid_DealRisk_n45(_uploadFile, _downloadFile, x3));
+function from_candid_vec_n57(_uploadFile, _downloadFile, value) {
+  return value.map((x3) => from_candid_Deal_n11(_uploadFile, _downloadFile, x3));
 }
-function from_candid_vec_n65(_uploadFile, _downloadFile, value) {
-  return value.map((x3) => from_candid_Deal_n13(_uploadFile, _downloadFile, x3));
-}
-function to_candid_DealStage_n31(_uploadFile, _downloadFile, value) {
-  return to_candid_variant_n32(_uploadFile, _downloadFile, value);
-}
-function to_candid_Deal_n28(_uploadFile, _downloadFile, value) {
-  return to_candid_record_n29(_uploadFile, _downloadFile, value);
-}
-function to_candid_EngagementLevel_n9(_uploadFile, _downloadFile, value) {
-  return to_candid_variant_n10(_uploadFile, _downloadFile, value);
-}
-function to_candid_StakeholderRole_n7(_uploadFile, _downloadFile, value) {
-  return to_candid_variant_n8(_uploadFile, _downloadFile, value);
-}
-function to_candid_Stakeholder_n5(_uploadFile, _downloadFile, value) {
-  return to_candid_record_n6(_uploadFile, _downloadFile, value);
-}
-function to_candid_UserRole_n26(_uploadFile, _downloadFile, value) {
-  return to_candid_variant_n27(_uploadFile, _downloadFile, value);
-}
-function to_candid_record_n29(_uploadFile, _downloadFile, value) {
-  return {
-    id: value.id,
-    activityPrior30Days: value.activityPrior30Days,
-    owner: value.owner,
-    stakeholders: to_candid_vec_n30(_uploadFile, _downloadFile, value.stakeholders),
-    name: value.name,
-    createdDate: value.createdDate,
-    closeDatePushes: value.closeDatePushes,
-    lastActivityDate: value.lastActivityDate,
-    expectedCloseDate: value.expectedCloseDate,
-    stage: to_candid_DealStage_n31(_uploadFile, _downloadFile, value.stage),
-    notes: value.notes,
-    account: value.account,
-    activityLast30Days: value.activityLast30Days,
-    amount: value.amount
-  };
-}
-function to_candid_record_n6(_uploadFile, _downloadFile, value) {
-  return {
-    name: value.name,
-    role: to_candid_StakeholderRole_n7(_uploadFile, _downloadFile, value.role),
-    lastContacted: value.lastContacted,
-    engagement: to_candid_EngagementLevel_n9(_uploadFile, _downloadFile, value.engagement)
-  };
-}
-function to_candid_variant_n10(_uploadFile, _downloadFile, value) {
-  return value == "low" ? {
-    low: null
-  } : value == "high" ? {
-    high: null
-  } : value == "none" ? {
-    none: null
-  } : value == "medium" ? {
-    medium: null
-  } : value;
-}
-function to_candid_variant_n27(_uploadFile, _downloadFile, value) {
-  return value == "admin" ? {
-    admin: null
-  } : value == "user" ? {
-    user: null
-  } : value == "guest" ? {
-    guest: null
-  } : value;
-}
-function to_candid_variant_n32(_uploadFile, _downloadFile, value) {
+function to_candid_DealStage_n26(_uploadFile, _downloadFile, value) {
   return value == "prospecting" ? {
     prospecting: null
   } : value == "closedWon" ? {
@@ -48699,7 +48713,21 @@ function to_candid_variant_n32(_uploadFile, _downloadFile, value) {
     closedLost: null
   } : value;
 }
-function to_candid_variant_n8(_uploadFile, _downloadFile, value) {
+function to_candid_Deal_n23(_uploadFile, _downloadFile, value) {
+  return to_candid_record_n24(_uploadFile, _downloadFile, value);
+}
+function to_candid_EngagementLevel_n8(_uploadFile, _downloadFile, value) {
+  return value == "low" ? {
+    low: null
+  } : value == "high" ? {
+    high: null
+  } : value == "none" ? {
+    none: null
+  } : value == "medium" ? {
+    medium: null
+  } : value;
+}
+function to_candid_StakeholderRole_n7(_uploadFile, _downloadFile, value) {
   return value == "economicBuyer" ? {
     economicBuyer: null
   } : value == "blocker" ? {
@@ -48712,7 +48740,46 @@ function to_candid_variant_n8(_uploadFile, _downloadFile, value) {
     technicalEvaluator: null
   } : value;
 }
-function to_candid_vec_n30(_uploadFile, _downloadFile, value) {
+function to_candid_Stakeholder_n5(_uploadFile, _downloadFile, value) {
+  return to_candid_record_n6(_uploadFile, _downloadFile, value);
+}
+function to_candid_UserRole_n22(_uploadFile, _downloadFile, value) {
+  return value == "admin" ? {
+    admin: null
+  } : value == "user" ? {
+    user: null
+  } : value == "guest" ? {
+    guest: null
+  } : value;
+}
+function to_candid_record_n24(_uploadFile, _downloadFile, value) {
+  return {
+    id: value.id,
+    activityPrior30Days: value.activityPrior30Days,
+    owner: value.owner,
+    stakeholders: to_candid_vec_n25(_uploadFile, _downloadFile, value.stakeholders),
+    name: value.name,
+    createdDate: value.createdDate,
+    closeDatePushes: value.closeDatePushes,
+    lastActivityDate: value.lastActivityDate,
+    expectedCloseDate: value.expectedCloseDate,
+    stage: to_candid_DealStage_n26(_uploadFile, _downloadFile, value.stage),
+    notes: value.notes,
+    account: value.account,
+    repEstimate: value.repEstimate ? candid_some(value.repEstimate) : candid_none(),
+    activityLast30Days: value.activityLast30Days,
+    amount: value.amount
+  };
+}
+function to_candid_record_n6(_uploadFile, _downloadFile, value) {
+  return {
+    name: value.name,
+    role: to_candid_StakeholderRole_n7(_uploadFile, _downloadFile, value.role),
+    lastContacted: value.lastContacted,
+    engagement: to_candid_EngagementLevel_n8(_uploadFile, _downloadFile, value.engagement)
+  };
+}
+function to_candid_vec_n25(_uploadFile, _downloadFile, value) {
   return value.map((x3) => to_candid_Stakeholder_n5(_uploadFile, _downloadFile, x3));
 }
 function createActor(canisterId, _uploadFile, _downloadFile, options = {}) {
@@ -48869,6 +48936,9 @@ function DealEditForm({
 }) {
   const [stage, setStage] = reactExports.useState(deal.stage);
   const [amount, setAmount] = reactExports.useState(deal.amount.toString());
+  const [repEstimate, setRepEstimate] = reactExports.useState(
+    deal.repEstimate === void 0 ? "" : deal.repEstimate.toString()
+  );
   const [expectedCloseDate, setExpectedCloseDate] = reactExports.useState(
     toDateInput(deal.expectedCloseDate)
   );
@@ -48878,13 +48948,17 @@ function DealEditForm({
   const [notes, setNotes] = reactExports.useState(deal.notes);
   const amountValue = Number(amount);
   const amountValid = amount.trim().length > 0 && Number.isFinite(amountValue) && amountValue > 0;
+  const repEstimateTrimmed = repEstimate.trim();
+  const repEstimateValue = Number(repEstimateTrimmed);
+  const repEstimateValid = repEstimateTrimmed.length === 0 || Number.isFinite(repEstimateValue) && repEstimateValue > 0;
   function handleSubmit(event) {
     event.preventDefault();
-    if (!amountValid || isSaving) return;
+    if (!amountValid || !repEstimateValid || isSaving) return;
     onSave({
       ...deal,
       stage,
       amount: BigInt(Math.round(amountValue)),
+      repEstimate: repEstimateTrimmed.length === 0 ? void 0 : BigInt(Math.round(repEstimateValue)),
       expectedCloseDate: fromDateInput$1(
         expectedCloseDate,
         deal.expectedCloseDate
@@ -48935,8 +49009,8 @@ function DealEditForm({
                 {
                   id: "deal-amount",
                   type: "number",
-                  min: 1,
-                  step: 1e3,
+                  min: 0,
+                  step: "any",
                   value: amount,
                   onChange: (event) => setAmount(event.target.value),
                   "aria-invalid": !amountValid,
@@ -48954,7 +49028,34 @@ function DealEditForm({
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { htmlFor: "deal-rep-estimate", children: "Rep estimate (USD)" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Input,
+                {
+                  id: "deal-rep-estimate",
+                  type: "number",
+                  min: 0,
+                  step: "any",
+                  value: repEstimate,
+                  onChange: (event) => setRepEstimate(event.target.value),
+                  placeholder: "Optional",
+                  "aria-invalid": !repEstimateValid,
+                  className: "rounded-md font-mono",
+                  "data-ocid": "deal_detail.edit_form.rep_estimate_input"
+                }
+              ),
+              repEstimateValid ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "The rep's own forecast for this deal. Leave blank if unestimated." }) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "p",
+                {
+                  className: "text-xs text-destructive",
+                  "data-ocid": "deal_detail.edit_form.rep_estimate_error",
+                  children: "Enter an amount greater than zero, or leave blank."
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { htmlFor: "deal-expected-close", children: "Expected close date" }),
+              " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 Input,
                 {
@@ -49019,7 +49120,7 @@ function DealEditForm({
             {
               type: "submit",
               size: "sm",
-              disabled: !amountValid || isSaving,
+              disabled: !amountValid || !repEstimateValid || isSaving,
               className: "rounded-md",
               "data-ocid": "deal_detail.edit_form.save_button",
               children: [
@@ -50413,7 +50514,8 @@ const pipelineKeys = {
   deal: (id) => [...pipelineKeys.all, "deal", id.toString()],
   risks: () => [...pipelineKeys.all, "risks"],
   forecast: () => [...pipelineKeys.all, "forecast"],
-  baseline: () => [...pipelineKeys.all, "baseline"]
+  baseline: () => [...pipelineKeys.all, "baseline"],
+  backtest: () => [...pipelineKeys.all, "backtest"]
 };
 function useDeals() {
   const { actor, isFetching } = useActor(createActor);
@@ -50455,6 +50557,17 @@ function useForecast() {
     queryFn: async () => {
       if (!actor) throw new Error("Backend is not ready");
       return actor.getForecast();
+    },
+    enabled: !!actor && !isFetching
+  });
+}
+function useBacktest() {
+  const { actor, isFetching } = useActor(createActor);
+  return useQuery({
+    queryKey: pipelineKeys.backtest(),
+    queryFn: async () => {
+      if (!actor) throw new Error("Backend is not ready");
+      return actor.getBacktest();
     },
     enabled: !!actor && !isFetching
   });
@@ -51089,8 +51202,8 @@ function AddDealDialog({
                 {
                   id: "add-deal-amount",
                   type: "number",
-                  min: 1,
-                  step: 1e3,
+                  min: 0,
+                  step: "any",
                   value: amount,
                   onChange: (event) => setAmount(event.target.value),
                   placeholder: "e.g. 120000",
@@ -51499,6 +51612,7 @@ const COLUMNS = [
   { key: "account", label: "Account" },
   { key: "owner", label: "Owner" },
   { key: "amount", label: "Amount", align: "right" },
+  { key: "repEstimate", label: "Rep estimate", align: "right" },
   { key: "stage", label: "Stage" },
   { key: "closeDate", label: "Expected close" },
   { key: "risk", label: "Risk score", align: "right" }
@@ -51608,6 +51722,21 @@ function DealsTable({
                 children: formatCurrency(deal.amount)
               }
             ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              TableCell,
+              {
+                className: "px-4 py-4 text-right align-top",
+                "data-ocid": `deals.rep_estimate.${index2 + 1}`,
+                children: deal.repEstimate === void 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs italic text-muted-foreground", children: "Unestimated" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: "font-mono tabular-nums text-foreground",
+                    "data-numeric": true,
+                    children: formatCurrency(deal.repEstimate)
+                  }
+                )
+              }
+            ),
             /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "px-4 py-4 align-top text-muted-foreground", children: stageLabel(deal.stage) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               TableCell,
@@ -51669,6 +51798,7 @@ function ResetSampleDataDialog({
 const SORT_KEYS = [
   "risk",
   "amount",
+  "repEstimate",
   "closeDate",
   "name",
   "account",
@@ -51699,6 +51829,8 @@ function compareRows(a2, b2, key) {
       return (((_a2 = a2.risk) == null ? void 0 : _a2.score) ?? -1) - (((_b2 = b2.risk) == null ? void 0 : _b2.score) ?? -1);
     case "amount":
       return Number(a2.deal.amount - b2.deal.amount);
+    case "repEstimate":
+      return Number((a2.deal.repEstimate ?? -1n) - (b2.deal.repEstimate ?? -1n));
     case "closeDate":
       return Number(a2.deal.expectedCloseDate - b2.deal.expectedCloseDate);
     case "name":
@@ -52428,6 +52560,345 @@ function DealsPage() {
     }
   );
 }
+const SKELETON_IDS = Array.from(
+  { length: 6 },
+  (_2, index2) => `overview-skeleton-${index2}`
+);
+function PanelSkeleton({ rows = 4 }) {
+  const ids = SKELETON_IDS.slice(0, rows);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-3", "data-ocid": "overview.loading_state", children: ids.map((id) => /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton, { className: "h-9 w-full rounded-md" }, id)) });
+}
+function PanelError({
+  message,
+  onRetry,
+  ocid = "overview.error_state"
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "flex flex-col items-start gap-3 rounded-md border border-destructive/30 bg-destructive/5 p-4",
+      "data-ocid": ocid,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-2.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            TriangleAlert,
+            {
+              className: "mt-0.5 size-4 shrink-0 text-destructive",
+              "aria-hidden": "true"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm leading-relaxed text-foreground", children: message })
+        ] }),
+        onRetry && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          Button,
+          {
+            type: "button",
+            variant: "outline",
+            size: "sm",
+            onClick: onRetry,
+            className: "rounded-md",
+            "data-ocid": `${ocid}.retry_button`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "size-3.5", "aria-hidden": "true" }),
+              "Try again"
+            ]
+          }
+        )
+      ]
+    }
+  );
+}
+function PanelEmpty({
+  title,
+  description,
+  ocid = "overview.empty_state"
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "flex flex-col items-center justify-center gap-2 rounded-md border border-dashed border-border px-6 py-10 text-center",
+      "data-ocid": ocid,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Inbox, { className: "size-5 text-muted-foreground", "aria-hidden": "true" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-sm font-semibold text-foreground", children: title }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-sm text-xs leading-relaxed text-muted-foreground", children: description })
+      ]
+    }
+  );
+}
+function signedCurrency$1(delta) {
+  if (delta === 0n) return "$0";
+  const sign2 = delta > 0n ? "+" : "−";
+  const magnitude = delta < 0n ? -delta : delta;
+  return `${sign2}${formatCurrency(magnitude)}`;
+}
+function errorTone(pct) {
+  if (pct > 0) return "text-destructive";
+  if (pct < 0) return "text-success";
+  return "text-muted-foreground";
+}
+function averageErrorTone() {
+  return "text-foreground";
+}
+function ErrorCell({
+  pct,
+  delta,
+  ocid
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-end gap-0.5", "data-ocid": ocid, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "span",
+      {
+        className: cn("font-mono text-sm tabular-nums", errorTone(pct)),
+        "data-numeric": true,
+        children: formatPercentDelta(pct, 1)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "span",
+      {
+        className: "font-mono text-xs tabular-nums text-muted-foreground",
+        "data-numeric": true,
+        children: signedCurrency$1(delta)
+      }
+    )
+  ] });
+}
+function QuarterRow({
+  row,
+  index: index2
+}) {
+  const unestimated = row.estimatedDealCount === 0n;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    TableRow,
+    {
+      className: "border-b border-border/70",
+      "data-ocid": `overview.backtest.row.${index2 + 1}`,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(TableCell, { className: "px-4 py-3.5 align-top", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block font-medium text-foreground", children: row.quarterLabel }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "mt-0.5 block text-xs text-muted-foreground", children: [
+            row.wonDealCount.toString(),
+            " closed-won of ",
+            row.dealCount.toString(),
+            " ",
+            "deals"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          TableCell,
+          {
+            className: "px-4 py-3.5 text-right align-top font-mono tabular-nums text-foreground",
+            "data-numeric": true,
+            children: formatCurrency(row.modelForecast)
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "px-4 py-3.5 text-right align-top", children: unestimated ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            className: "text-xs italic text-muted-foreground",
+            "data-ocid": `overview.backtest.unestimated.${index2 + 1}`,
+            children: "No rep estimates"
+          }
+        ) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono tabular-nums text-foreground", "data-numeric": true, children: formatCurrency(row.repEstimateTotal) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          TableCell,
+          {
+            className: "px-4 py-3.5 text-right align-top font-mono tabular-nums text-foreground",
+            "data-numeric": true,
+            children: formatCurrency(row.actualWon)
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "px-4 py-3.5 text-right align-top", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          ErrorCell,
+          {
+            pct: row.modelErrorPct,
+            delta: row.modelErrorDelta,
+            ocid: `overview.backtest.model_error.${index2 + 1}`
+          }
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "px-4 py-3.5 text-right align-top", children: unestimated ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: "—" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+          ErrorCell,
+          {
+            pct: row.repErrorPct,
+            delta: row.repErrorDelta,
+            ocid: `overview.backtest.rep_error.${index2 + 1}`
+          }
+        ) })
+      ]
+    }
+  );
+}
+function BacktestPanel({
+  result,
+  isLoading,
+  isError,
+  onRetry
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "section",
+    {
+      className: "rounded-lg border border-border bg-card p-6 shadow-none",
+      "aria-label": "Historical backtest",
+      "data-ocid": "overview.backtest.panel",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-start justify-between gap-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-md border border-border bg-muted text-muted-foreground", children: /* @__PURE__ */ jsxRuntimeExports.jsx(History, { className: "size-4", "aria-hidden": "true" }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display text-base font-semibold tracking-tight text-foreground", children: "Backtest — model vs. rep estimates" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-0.5 text-xs text-muted-foreground", children: "Historical scoring on held-out quarters. Not the live forecast." })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex items-center rounded-full border border-border bg-muted px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground", children: "Historical" })
+        ] }),
+        isLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-5", "data-ocid": "overview.backtest.loading_state", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PanelSkeleton, { rows: 5 }) }) : isError ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          PanelError,
+          {
+            message: "The backtest could not be loaded. Check the connection and try again.",
+            onRetry,
+            ocid: "overview.backtest.error_state"
+          }
+        ) }) : !result || result.rows.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          PanelEmpty,
+          {
+            title: "No held-out quarters yet",
+            description: "Once closed-won history spans a few quarters, the model and rep estimates are scored here against actual revenue.",
+            ocid: "overview.backtest.empty_state"
+          }
+        ) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-4 text-xs leading-relaxed text-muted-foreground", children: [
+            "Scoring uses only closed-won revenue.",
+            " ",
+            result.holdoutQuarterCount.toString(),
+            " quarter",
+            result.holdoutQuarterCount === 1n ? "" : "s",
+            " held out",
+            result.computedAt ? ` · computed ${formatDateTime(result.computedAt)}` : "",
+            "."
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-4 overflow-hidden rounded-md border border-border", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto scroll-slim", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Table, { className: "min-w-[52rem] border-separate border-spacing-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(TableHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { className: "border-b border-border bg-muted hover:bg-muted", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                TableHead,
+                {
+                  scope: "col",
+                  className: "h-10 bg-muted px-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground",
+                  children: "Held-out quarter"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                TableHead,
+                {
+                  scope: "col",
+                  className: "h-10 bg-muted px-4 text-right text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground",
+                  children: "Model forecast"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                TableHead,
+                {
+                  scope: "col",
+                  className: "h-10 bg-muted px-4 text-right text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground",
+                  children: "Rep estimates"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                TableHead,
+                {
+                  scope: "col",
+                  className: "h-10 bg-muted px-4 text-right text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground",
+                  children: "Actual closed-won"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                TableHead,
+                {
+                  scope: "col",
+                  className: "h-10 bg-muted px-4 text-right text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground",
+                  children: "Model error"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                TableHead,
+                {
+                  scope: "col",
+                  className: "h-10 bg-muted px-4 text-right text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground",
+                  children: "Rep error"
+                }
+              )
+            ] }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(TableBody, { children: result.rows.map((row, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              QuarterRow,
+              {
+                row,
+                index: index2
+              },
+              row.quarterLabel
+            )) })
+          ] }) }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid gap-4 sm:grid-cols-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "rounded-md border border-border bg-muted/40 p-4",
+                "data-ocid": "overview.backtest.avg_model",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground", children: "Average model error" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "p",
+                    {
+                      className: cn(
+                        "mt-1.5 font-display text-2xl font-semibold tabular-nums",
+                        averageErrorTone()
+                      ),
+                      "data-numeric": true,
+                      children: formatPercentDelta(result.avgModelErrorPct, 1)
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-xs text-muted-foreground", children: "Mean absolute error across held-out quarters" })
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "rounded-md border border-border bg-muted/40 p-4",
+                "data-ocid": "overview.backtest.avg_rep",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground", children: "Average rep estimate error" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "p",
+                    {
+                      className: cn(
+                        "mt-1.5 font-display text-2xl font-semibold tabular-nums",
+                        averageErrorTone()
+                      ),
+                      "data-numeric": true,
+                      children: formatPercentDelta(result.avgRepErrorPct, 1)
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-xs text-muted-foreground", children: "Mean absolute error across held-out quarters" })
+                ]
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "mt-4 rounded-md border border-border bg-muted/40 p-4",
+              "data-ocid": "overview.backtest.verdict",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground", children: "Verdict" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1.5 text-sm leading-relaxed text-foreground", children: result.verdict })
+              ]
+            }
+          )
+        ] })
+      ]
+    }
+  );
+}
 function deltaTone(delta) {
   if (delta > 0n) return "text-success";
   if (delta < 0n) return "text-destructive";
@@ -52812,72 +53283,6 @@ function SecondaryKpiGrid({
       }
     )
   ] });
-}
-const SKELETON_IDS = Array.from(
-  { length: 6 },
-  (_2, index2) => `overview-skeleton-${index2}`
-);
-function PanelSkeleton({ rows = 4 }) {
-  const ids = SKELETON_IDS.slice(0, rows);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-3", "data-ocid": "overview.loading_state", children: ids.map((id) => /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton, { className: "h-9 w-full rounded-md" }, id)) });
-}
-function PanelError({
-  message,
-  onRetry,
-  ocid = "overview.error_state"
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "div",
-    {
-      className: "flex flex-col items-start gap-3 rounded-md border border-destructive/30 bg-destructive/5 p-4",
-      "data-ocid": ocid,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-2.5", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            TriangleAlert,
-            {
-              className: "mt-0.5 size-4 shrink-0 text-destructive",
-              "aria-hidden": "true"
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm leading-relaxed text-foreground", children: message })
-        ] }),
-        onRetry && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          Button,
-          {
-            type: "button",
-            variant: "outline",
-            size: "sm",
-            onClick: onRetry,
-            className: "rounded-md",
-            "data-ocid": `${ocid}.retry_button`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "size-3.5", "aria-hidden": "true" }),
-              "Try again"
-            ]
-          }
-        )
-      ]
-    }
-  );
-}
-function PanelEmpty({
-  title,
-  description,
-  ocid = "overview.empty_state"
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "div",
-    {
-      className: "flex flex-col items-center justify-center gap-2 rounded-md border border-dashed border-border px-6 py-10 text-center",
-      "data-ocid": ocid,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Inbox, { className: "size-5 text-muted-foreground", "aria-hidden": "true" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-sm font-semibold text-foreground", children: title }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-sm text-xs leading-relaxed text-muted-foreground", children: description })
-      ]
-    }
-  );
 }
 var isArray$e = Array.isArray;
 var isArray_1 = isArray$e;
@@ -75904,6 +76309,7 @@ function OverviewPage() {
   const forecastQuery = useForecast();
   const dealsQuery = useDeals();
   const risksQuery = useDealRisks();
+  const backtestQuery = useBacktest();
   const rationaleMutation = useGenerateForecastRationale();
   const [rationaleError, setRationaleError] = reactExports.useState(null);
   const forecast = forecastQuery.data;
@@ -75938,6 +76344,7 @@ function OverviewPage() {
     void forecastQuery.refetch();
     void dealsQuery.refetch();
     void risksQuery.refetch();
+    void backtestQuery.refetch();
   };
   function handleGenerateRationale() {
     setRationaleError(null);
@@ -76078,6 +76485,15 @@ function OverviewPage() {
             isPending: rationaleMutation.isPending,
             errorMessage: rationaleError,
             onGenerate: handleGenerateRationale
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          BacktestPanel,
+          {
+            result: backtestQuery.data,
+            isLoading: backtestQuery.isLoading,
+            isError: backtestQuery.isError,
+            onRetry: () => void backtestQuery.refetch()
           }
         )
       ] }) })

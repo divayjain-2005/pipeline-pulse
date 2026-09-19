@@ -17,12 +17,20 @@ mixin () {
     "  range, never a single point estimate.\n" #
     "- **LLM reasoning** — Caffeine Inference generates a specific explanation and a\n" #
     "  recommended next action per at-risk deal, and a written rationale for the\n" #
-    "  forecast.\n\n" #
+    "  forecast.\n" #
+    "- **Backtest** — the same forecast logic is replayed over each of the last six\n" #
+    "  completed calendar quarters. For each held-out quarter the open pipeline is\n" #
+    "  reconstructed deterministically as it stood at that quarter's start\n" #
+    "  (open-stage deals created 30-180 days before the quarter start whose expected\n" #
+    "  close date falls at or after it), the forecast is run over that snapshot, and\n" #
+    "  the result is scored against actual closed-won revenue, side by side with the\n" #
+    "  reps' own per-deal estimates.\n\n" #
     "The dataset is seeded on first install and can be restored at any time with\n" #
     "`resetSampleData`. No upload or import step is required.\n\n" #
     "## Authentication and authorization\n\n" #
     "- **Reads** (`listDeals`, `getDeal`, `listDealRisks`, `getForecast`,\n" #
-    "  `getBaseline`, `getDealReasoning`, `getForecastRationale`, `getApiDoc`) are\n" #
+    "  `getBaseline`, `getBacktest`, `getDealReasoning`, `getForecastRationale`,\n" #
+    "  `getApiDoc`) are\n" #
     "  `query` methods and are callable by anyone, including anonymous callers.\n" #
     "- **Mutations** (`createDeal`, `updateDeal`, `deleteDeal`, `addStakeholder`,\n" #
     "  `updateStakeholder`, `resetSampleData`) require a **signed (non-anonymous)\n" #
@@ -63,7 +71,10 @@ mixin () {
     "  `#procurement`, `#blocker`), `EngagementLevel` (`#high`, `#medium`, `#low`,\n" #
     "  `#none`), `RiskBucket` (`#high`, `#medium`, `#low`).\n" #
     "- **Stakeholders** are embedded in each `Deal` as an ordered array. A\n" #
-    "  stakeholder is addressed by its **index** in that array, not by an id.\n\n" #
+    "  stakeholder is addressed by its **index** in that array, not by an id.\n" #
+    "- **`repEstimate`** is an optional per-deal dollar amount (`?Nat`). `null`\n" #
+    "  means the rep has not estimated the deal; unestimated deals are excluded\n" #
+    "  from rep-estimate totals and should be marked as unestimated in the UI.\n\n" #
     "## Lifecycle and polling\n\n" #
     "- The pipeline is seeded on first install. `resetSampleData` clears all open\n" #
     "  deals and the baseline and regenerates the deterministic synthetic dataset\n" #
@@ -87,7 +98,12 @@ mixin () {
     "  back with `getDealReasoning` / `getForecastRationale` without regenerating.\n" #
     "- Regenerating a deal's reasoning uses the previously cached risk (including its\n" #
     "  prior explanation) as the base, so repeated generation refines rather than\n" #
-    "  discards earlier context.\n\n" #
+    "  discards earlier context.\n" #
+    "- `getBacktest` is computed on every call from the stored closed history and\n" #
+    "  the deterministic historical open-pipeline snapshots; it is not cached. It\n" #
+    "  returns `computedAt` so a client can tell when the numbers were produced. The\n" #
+    "  backtest is **historical scoring**, distinct from the live `getForecast`;\n" #
+    "  render them separately so users do not confuse the two.\n\n" #
     "## Mutation retry safety\n\n" #
     "- `createDeal` assigns the next id server-side and **ignores any id supplied in\n" #
     "  the payload**. Retrying a create after a timeout therefore creates a\n" #
@@ -133,6 +149,15 @@ mixin () {
     "- **Risk signals are individually attributable.** Each `RiskSignal` carries a\n" #
     "  `code`, a human-readable `caption`, a `detail`, and its `weight` and\n" #
     "  `contribution` to the total `score`, so an explanation can name the exact\n" #
-    "  signals that drove the score.\n"
+    "  signals that drove the score.\n" #
+    "- **Backtest errors are signed.** In `BacktestQuarterRow`, a positive\n" #
+    "  `modelErrorPct` / `modelErrorDelta` means the model forecast **above**\n" #
+    "  actual; negative means below. The same convention applies to the rep\n" #
+    "  columns. `avgModelErrorPct` and `avgRepErrorPct` are means of the absolute\n" #
+    "  per-quarter errors, so they are always non-negative.\n" #
+    "- **Backtest actuals are closed-won only.** `actualWon` sums closed-won deals\n" #
+    "  whose close date falls in the quarter; closed-lost deals contribute nothing.\n" #
+    "- **`getBacktest` is read-only** and callable by anyone, including anonymous\n" #
+    "  callers.\n"
   };
 };

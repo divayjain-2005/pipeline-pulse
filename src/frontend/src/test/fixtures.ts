@@ -6,6 +6,8 @@
  */
 
 import {
+  type BacktestQuarterRow,
+  type BacktestResult,
   type Deal,
   type DealRisk,
   DealStage,
@@ -164,6 +166,53 @@ export function makeBaseline(
   };
 }
 
+export function makeBacktestRow(
+  overrides: Partial<BacktestQuarterRow> = {},
+): BacktestQuarterRow {
+  return {
+    quarterLabel: "2026 Q2",
+    quarterStart: NOW - 180n * BigInt(DAY),
+    quarterEnd: NOW - 90n * BigInt(DAY),
+    modelForecast: 1_200_000n,
+    repEstimateTotal: 1_050_000n,
+    actualWon: 1_000_000n,
+    modelErrorPct: 0.2,
+    modelErrorDelta: 200_000n,
+    repErrorPct: 0.05,
+    repErrorDelta: 50_000n,
+    dealCount: 48n,
+    estimatedDealCount: 42n,
+    wonDealCount: 12n,
+    ...overrides,
+  };
+}
+
+export function makeBacktestResult(
+  overrides: Partial<BacktestResult> = {},
+): BacktestResult {
+  return {
+    rows: [
+      makeBacktestRow({
+        quarterLabel: "2026 Q2",
+        modelErrorPct: 0.2,
+        repErrorPct: 0.05,
+      }),
+      makeBacktestRow({
+        quarterLabel: "2026 Q1",
+        modelErrorPct: -0.1,
+        repErrorPct: 0.15,
+      }),
+    ],
+    avgModelErrorPct: 0.15,
+    avgRepErrorPct: 0.1,
+    verdict:
+      "Across 2 held-out quarters the reps' average error was 10% versus the model's 15%, so the reps were closer by 5% of actual closed-won revenue.",
+    holdoutQuarterCount: 2n,
+    computedAt: NOW,
+    ...overrides,
+  };
+}
+
 /** A small, deterministic seeded pipeline for page-level journeys. */
 export function makeSeededPipeline(): { deals: Deal[]; risks: DealRisk[] } {
   const deals: Deal[] = [
@@ -174,6 +223,7 @@ export function makeSeededPipeline(): { deals: Deal[]; risks: DealRisk[] } {
       owner: "Priya Raman",
       stage: DealStage.negotiation,
       amount: 250_000n,
+      repEstimate: 240_000n,
     }),
     makeDeal({
       id: 2n,
@@ -182,6 +232,7 @@ export function makeSeededPipeline(): { deals: Deal[]; risks: DealRisk[] } {
       owner: "Marcus Lee",
       stage: DealStage.proposal,
       amount: 180_000n,
+      repEstimate: 150_000n,
     }),
     makeDeal({
       id: 3n,
@@ -190,6 +241,8 @@ export function makeSeededPipeline(): { deals: Deal[]; risks: DealRisk[] } {
       owner: "Priya Raman",
       stage: DealStage.qualification,
       amount: 90_000n,
+      // Deliberately unestimated: the ledger must mark it as such.
+      repEstimate: undefined,
     }),
     makeDeal({
       id: 4n,

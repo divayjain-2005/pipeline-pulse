@@ -15,12 +15,14 @@ import Types "types/pipeline";
 import PipelineStore "mixins/pipeline-store";
 import PipelineApi "mixins/pipeline-api";
 import PipelineLlm "mixins/pipeline-llm";
+import BacktestApi "mixins/backtest-api";
 import ApiDocMixin "mixins/api-doc";
 
 actor {
   let accessControlState : AccessControl.AccessControlState;
   let deals : Map.Map<Nat, Types.Deal>;
   let baselineDeals : List.List<Types.Deal>;
+  let closedHistory : List.List<Types.Deal>;
   let state : { var nextDealId : Nat };
   let reasoningCache : Map.Map<Nat, Types.DealRisk>;
   let forecastRationale : { var text : Text; var generatedAt : ?Int };
@@ -76,7 +78,7 @@ actor {
   };
 
   include MixinAuthorization(accessControlState, null);
-  include PipelineStore(deals, baselineDeals, state);
+  include PipelineStore(deals, baselineDeals, closedHistory, state);
   include PipelineApi(
     deals,
     baselineDeals,
@@ -91,6 +93,7 @@ actor {
     seedSampleData,
   );
   include PipelineLlm(deals, baselineDeals, reasoningCache, forecastRationale);
+  include BacktestApi(closedHistory, baselineDeals);
   include ApiDocMixin();
   include Expose({
     entities = [
@@ -110,6 +113,7 @@ actor {
           closeDatePushes = 0;
           notes = "";
           stakeholders = [];
+          repEstimate = null;
         })
         .payload("id", func d = d.id)
         .payload("name", func d = d.name)
@@ -125,6 +129,7 @@ actor {
         .payload("closeDatePushes", func d = d.closeDatePushes)
         .payload("notes", func d = d.notes)
         .payload("stakeholderCount", func d = d.stakeholders.size())
+        .payload("repEstimate", func d = d.repEstimate ?? 0)
         .controllerOnly()
         .build(),
       OQL.Entity.manual<(Nat, Nat, Types.Stakeholder)>(

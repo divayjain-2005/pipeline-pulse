@@ -214,8 +214,8 @@ export function AddDealDialog({
               <Input
                 id="add-deal-amount"
                 type="number"
-                min={1}
-                step={1000}
+                min={0}
+                step="any"
                 value={amount}
                 onChange={(event) => setAmount(event.target.value)}
                 placeholder="e.g. 120000"

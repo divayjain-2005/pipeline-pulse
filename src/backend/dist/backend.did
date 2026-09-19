@@ -182,6 +182,7 @@ type Deal =
    name: text;
    notes: text;
    owner: text;
+   repEstimate: opt nat;
    stage: DealStage;
    stakeholders: vec Stakeholder;
  };
@@ -189,6 +190,31 @@ type Cell =
  record {
    name: text;
    value: Value;
+ };
+type BacktestResult = 
+ record {
+   avgModelErrorPct: float64;
+   avgRepErrorPct: float64;
+   computedAt: int;
+   holdoutQuarterCount: nat;
+   rows: vec BacktestQuarterRow;
+   verdict: text;
+ };
+type BacktestQuarterRow = 
+ record {
+   actualWon: nat;
+   dealCount: nat;
+   estimatedDealCount: nat;
+   modelErrorDelta: int;
+   modelErrorPct: float64;
+   modelForecast: nat;
+   quarterEnd: int;
+   quarterLabel: text;
+   quarterStart: int;
+   repErrorDelta: int;
+   repErrorPct: float64;
+   repEstimateTotal: nat;
+   wonDealCount: nat;
  };
 service : {
   _initialize_access_control: () -> ();
@@ -202,6 +228,7 @@ service : {
   generateDealReasoning: (dealId: nat) -> (PipelineResult_3);
   generateForecastRationale: () -> (PipelineResult_2);
   getApiDoc: () -> (text) query;
+  getBacktest: () -> (BacktestResult) query;
   getBaseline: () -> (HistoricalBaseline) query;
   getCallerUserRole: () -> (UserRole) query;
   getDeal: (id: nat) -> (opt Deal) query;

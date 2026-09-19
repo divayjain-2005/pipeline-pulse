@@ -7,6 +7,7 @@
  */
 
 import { Layout } from "@/components/Layout";
+import { BacktestPanel } from "@/components/overview/BacktestPanel";
 import { BaselinePanel } from "@/components/overview/BaselinePanel";
 import {
   HeroForecastCard,
@@ -25,6 +26,7 @@ import {
 import { RationalePanel } from "@/components/overview/RationalePanel";
 import { Button } from "@/components/ui/button";
 import {
+  useBacktest,
   useDealRisks,
   useDeals,
   useForecast,
@@ -44,6 +46,7 @@ export default function OverviewPage() {
   const forecastQuery = useForecast();
   const dealsQuery = useDeals();
   const risksQuery = useDealRisks();
+  const backtestQuery = useBacktest();
   const rationaleMutation = useGenerateForecastRationale();
 
   const [rationaleError, setRationaleError] = useState<string | null>(null);
@@ -89,6 +92,7 @@ export default function OverviewPage() {
     void forecastQuery.refetch();
     void dealsQuery.refetch();
     void risksQuery.refetch();
+    void backtestQuery.refetch();
   };
 
   function handleGenerateRationale() {
@@ -215,6 +219,13 @@ export default function OverviewPage() {
               isPending={rationaleMutation.isPending}
               errorMessage={rationaleError}
               onGenerate={handleGenerateRationale}
+            />
+
+            <BacktestPanel
+              result={backtestQuery.data}
+              isLoading={backtestQuery.isLoading}
+              isError={backtestQuery.isError}
+              onRetry={() => void backtestQuery.refetch()}
             />
           </>
         )}
